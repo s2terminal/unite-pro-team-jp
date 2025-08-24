@@ -1,19 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getTeams } from '../lib/data';
+import TeamList from '../components/TeamList';
 
 const teams = await getTeams();
 ---
 
 <Layout>
-  <main style="max-width: 960px; margin: 0 auto; padding: 24px;">
-    <h1>チーム一覧</h1>
-    <ul>
-      {teams.map((t) => (
-        <li>
-          <a href={`/team/${t.slug}/`}>{t.name}</a>
-        </li>
-      ))}
-    </ul>
+  <main style="max-width: 1100px; margin: 0 auto; padding: 24px;">
+    <h1 style="margin-bottom: 12px;">チーム一覧</h1>
+    <TeamList client:visible teams={teams} />
   </main>
 </Layout>

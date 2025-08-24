@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getAllPlayerSlugs, getPlayerBySlug, getPlayerHistory, getCurrentTeamForPlayer, getTeams } from '../../lib/data';
+import PlayerDetail from '../../components/PlayerDetail';
 
 export async function getStaticPaths() {
   const slugs = await getAllPlayerSlugs();
@@ -16,43 +17,7 @@ const history = await getPlayerHistory(slug!);
 ---
 
 <Layout>
-  <main style="max-width: 960px; margin: 0 auto; padding: 24px;">
-    <p><a href="/">← チーム一覧に戻る</a></p>
-    <h1>{player?.name ?? slug}</h1>
-    {player?.alias?.length && <p>別名: {player.alias.join(', ')}</p>}
-    {player?.reference?.length && (
-      <p>参考: {player.reference.map((r) => <a href={r} target="_blank" rel="noopener noreferrer">{r}</a>).reduce((prev, curr) => [prev, ' / ', curr])}</p>
-    )}
-
-    <section>
-      <h2>現在の所属</h2>
-      {currentTeamSlug ? (
-        <p><a href={`/team/${currentTeamSlug}/`}>{teamBySlug.get(currentTeamSlug)?.name ?? currentTeamSlug}</a></p>
-      ) : (
-        <p>所属なし</p>
-      )}
-    </section>
-
-    <section>
-      <h2>所属履歴</h2>
-      {history.length ? (
-        <ul>
-          {history.map((h) => (
-            <li>
-              <strong>{h.date}</strong> {h.action === 'in' ? '加入' : '離脱'} - <a href={`/team/${h.team}/`}>{teamBySlug.get(h.team)?.name ?? h.team}</a>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>履歴がありません。</p>
-      )}
-    </section>
+  <main style="max-width: 1100px; margin: 0 auto; padding: 24px;">
+    <PlayerDetail client:visible player={player ?? { slug, name: slug }} currentTeam={currentTeamSlug} history={history} teamBySlug={Object.fromEntries(teamBySlug)} />
   </main>
 </Layout>
-
-<style>
-  a { color: #0a66c2; }
-  a:hover { text-decoration: underline; }
-  h1, h2 { margin-bottom: 0.4rem; }
-  section { margin-top: 1.5rem; }
-</style>

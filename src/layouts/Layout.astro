@@ -1,5 +1,6 @@
 ---
 import CssBaseline from '@mui/material/CssBaseline';
+import Header from '../components/Header';
 ---
 
 <!doctype html>
@@ -13,6 +14,7 @@ import CssBaseline from '@mui/material/CssBaseline';
   </head>
   <body>
     <CssBaseline />
+    <Header client:load />
     <slot />
   </body>
 </html>

@@ -1,0 +1,76 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getTeamSlugs, getTeamBySlug, getRosterForTeam, getPlayers } from '../../lib/data';
+
+export async function getStaticPaths() {
+  const slugs = await getTeamSlugs();
+  return slugs.map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const team = await getTeamBySlug(slug!);
+if (!team) throw new Error(`Team not found: ${slug}`);
+const roster = await getRosterForTeam(slug!);
+const players = await getPlayers();
+const playersBySlug = new Map(players.map((p) => [p.slug, p]));
+---
+
+<Layout>
+  <main style="max-width: 960px; margin: 0 auto; padding: 24px;">
+    <p><a href="/">← チーム一覧に戻る</a></p>
+    <h1>{team.name}</h1>
+    {team.memo && <p>{team.memo}</p>}
+    {team.alias?.length && (
+      <p>別名: {team.alias.join(', ')}</p>
+    )}
+    {team.reference?.length && (
+      <p>参考: {team.reference.map((r) => <a href={r} target="_blank" rel="noopener noreferrer">{r}</a>).reduce((prev, curr) => [prev, ' / ', curr])}</p>
+    )}
+
+    <section>
+      <h2>現在のメンバー</h2>
+      {roster.current.length ? (
+        <ul>
+          {roster.current.map((pslug) => (
+            <li>
+              <a href={`/player/${pslug}/`}>{playersBySlug.get(pslug)?.name ?? pslug}</a>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>メンバー情報がありません。</p>
+      )}
+    </section>
+
+    <section>
+      <h2>ロスター履歴</h2>
+      {roster.history.length ? (
+        <ul>
+          {roster.history.map((h) => (
+            <li>
+              <strong>{h.date}</strong>:
+              {h.member.in?.length ? (
+                <span> 加入: {h.member.in.map((s) => playersBySlug.get(s)?.name ?? s).join(', ')}</span>
+              ) : null}
+              {h.member.out?.length ? (
+                <span> 離脱: {h.member.out.map((s) => playersBySlug.get(s)?.name ?? s).join(', ')}</span>
+              ) : null}
+              {h.reference?.length ? (
+                <span> [参照: {h.reference.map((r) => <a href={r} target="_blank" rel="noopener noreferrer">{r}</a>).reduce((prev, curr) => [prev, ' / ', curr])}]</span>
+              ) : null}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>履歴がありません。</p>
+      )}
+    </section>
+  </main>
+</Layout>
+
+<style>
+  a { color: #0a66c2; }
+  a:hover { text-decoration: underline; }
+  h1, h2 { margin-bottom: 0.4rem; }
+  section { margin-top: 1.5rem; }
+</style>

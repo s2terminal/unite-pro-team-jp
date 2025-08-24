@@ -1,11 +1,19 @@
 ---
-import { Home } from '../components/Home';
 import Layout from '../layouts/Layout.astro';
+import { getTeams } from '../lib/data';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const teams = await getTeams();
 ---
 
 <Layout>
-  <Home />
+  <main style="max-width: 960px; margin: 0 auto; padding: 24px;">
+    <h1>チーム一覧</h1>
+    <ul>
+      {teams.map((t) => (
+        <li>
+          <a href={`/team/${t.slug}/`}>{t.name}</a>
+        </li>
+      ))}
+    </ul>
+  </main>
 </Layout>

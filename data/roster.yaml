@@ -16,3 +16,30 @@ insomnia:
     reference:
       - https://x.com/insomnia_esp/status/1920419131683127399
     date: 2025-05-08
+qtdig:
+  - member:
+      in:
+        - mame
+        - suix
+        - chanme
+        - vin
+        - kabikiller
+    reference: [https://qtdig.com/news/1094/]
+    date: 2024-09-07
+  - member:
+      out:
+        - mame
+        - chanme
+        - vin
+        - kabikiller
+    reference: [https://x.com/QT_DIG/status/1906617467264200884]
+    date: 2025-03-31
+  - member:
+      in:
+        - bacon
+        - hachi
+        - teacher
+        - hayatobi
+        - omutero
+    reference: [https://x.com/QT_DIG/status/1911705998638940342]
+    date: 2025-04-14

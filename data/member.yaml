@@ -15,3 +15,37 @@ player:
   sslime:
     name: sSlime
     reference: [https://x.com/slime_821]
+  mame:
+    name: Mame
+    reference: [https://x.com/mamewile22]
+  chanme:
+    name: chan_me
+    reference: [https://x.com/_chanmaker]
+  vin:
+    name: びいん
+    reference: [https://x.com/shir_sw]
+  kabikiller:
+    name: kabikiller
+    reference: [https://x.com/kabi_nnn]
+  suix:
+    name: Suix
+    alias: [すいしょー]
+    reference: [https://x.com/Su1sy_o]
+  bacon:
+    name: Bacon
+    alias: [べーこん]
+    reference: [https://x.com/bacon11301130]
+  hachi:
+    name: Hachi
+    alias: [はち]
+    reference: [https://x.com/hachiii000]
+  teacher:
+    name: Teacher
+    reference: [https://x.com/gaouuu_]
+  hayatobi:
+    name: hayatobi
+    alias: [はやて]
+    reference: [https://x.com/Rnx_xn]
+  omutero:
+    name: Omutero
+    reference: [https://x.com/xo_mq0]

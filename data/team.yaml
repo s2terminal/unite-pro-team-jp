@@ -1,5 +1,11 @@
 insomnia:
   name: INSOMNIA
-  references:
+  reference:
     - https://insomnia.zone/
   memo: LRAというチームが前身。PUACL2025 1位
+qtdig:
+  name: QT DIG∞
+  alias:
+    - Sengoku Gaming
+  reference:
+    - https://qtdig.com/team/pokemon_unite/

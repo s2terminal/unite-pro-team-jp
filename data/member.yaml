@@ -50,3 +50,29 @@ player:
   omutero:
     name: Omutero
     reference: [https://x.com/xo_mq0]
+  vitoppo:
+    name: Vitoppo
+    reference: [https://x.com/UNITE_TOPPO]
+  iamtomato:
+    name: iamTomato
+    reference: [https://x.com/Tomato_unite_]
+  rom:
+    name: Rom
+    reference: [https://x.com/Rommarudesu]
+  wajiro:
+    name: Wajiro
+    reference: [https://x.com/waji_noda]
+  "1levup":
+    name: 1LevUP
+    alias: [えなこん]
+    reference: [https://x.com/Matyfas]
+  tomy:
+    name: Tomy
+    reference: [https://x.com/xyk1en]
+  sari:
+    name: Sari
+    reference: [https://x.com/lark_hs]
+  cocoatta:
+    name: Cocoatta
+    alias: [ここあった]
+    reference: [https://x.com/cocoa_poke_]

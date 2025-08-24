@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=./schema/member.schema.json
 player:
   luuna:
     name: Lunna

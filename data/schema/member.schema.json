@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/schemas/member.schema.json",
+  "title": "Members",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "player": {
+      "type": "object",
+      "propertyNames": { "pattern": "^[a-z0-9][a-z0-9_-]*$" },
+      "description": "Map of player slug -> player profile",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "alias": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1 },
+            "uniqueItems": true
+          },
+          "reference": {
+            "type": "array",
+            "items": { "type": "string", "format": "uri" },
+            "minItems": 1
+          }
+        },
+        "required": ["name"],
+        "anyOf": [
+          { "required": ["reference"] },
+          { "required": ["alias"] }
+        ]
+      }
+    }
+  },
+  "required": ["player"]
+}

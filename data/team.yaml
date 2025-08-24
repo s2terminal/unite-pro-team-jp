@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=./schema/team.schema.json
 insomnia:
   name: INSOMNIA
   reference:

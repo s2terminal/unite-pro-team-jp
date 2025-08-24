@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/schemas/team.schema.json",
+  "title": "Teams",
+  "type": "object",
+  "propertyNames": { "pattern": "^[a-z0-9][a-z0-9_-]*$" },
+  "additionalProperties": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "name": { "type": "string", "minLength": 1 },
+      "alias": {
+        "type": "array",
+        "items": { "type": "string", "minLength": 1 },
+        "uniqueItems": true
+      },
+      "reference": {
+        "type": "array",
+        "items": { "type": "string", "format": "uri" },
+        "minItems": 1
+      },
+      "memo": { "type": "string" }
+    },
+    "required": ["name"]
+  }
+}

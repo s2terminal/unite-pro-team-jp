@@ -76,3 +76,28 @@ player:
     name: Cocoatta
     alias: [ここあった]
     reference: [https://x.com/cocoa_poke_]
+  yakou:
+    name: Yakou
+    reference: [https://x.com/yakoulamperouge]
+  piui:
+    name: piui
+    reference: [https://x.com/piui037]
+  haruta:
+    name: Haruta
+    reference: [https://x.com/Haruta_Unite]
+  tamerin:
+    name: Tamerin
+    reference: [https://x.com/tamerin1122]
+  satake:
+    name: Satake
+    reference: [https://x.com/yowayowasatake]
+  o2:
+    name: O2
+    reference: [https://x.com/O2_unite]
+  haruto:
+    name: Haruto
+    reference: [https://x.com/Haruto_4_4]
+  pavone:
+    name: Pavóne
+    alias: [Pavone]
+    reference: [https://x.com/Pavone0223125]

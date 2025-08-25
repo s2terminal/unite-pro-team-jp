@@ -70,3 +70,16 @@ zeta-division:
     reference:
       - https://zetadivision.com/news/2025/05/21/34042
     date: 2025-05-21
+reject:
+  - member:
+      in:
+        - yakou
+        - piui
+        - haruta
+        - tamerin
+        - satake
+        - o2
+    reference:
+      - https://prtimes.jp/main/html/rd/p/000000116.000050979.html
+      - https://reject.jp/2024/05/27/%E3%80%90%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3%E3%83%A6%E3%83%8A%E3%82%A4%E3%83%88%E3%80%91%E3%80%8CREJECT-jsv%E3%80%8D%E3%81%A8%E3%81%97%E3%81%A6%E9%83%A8%E9%96%80%E8%A8%AD%E7%AB%8B%E5%8F%8A%E3%81%B3%E6%96%B0%E7%99%BA%E8%A1%A8/
+    date: 2024-05-28

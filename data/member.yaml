@@ -76,3 +76,21 @@ player:
     name: Cocoatta
     alias: [ここあった]
     reference: [https://x.com/cocoa_poke_]
+  yakou:
+    name: Yakou
+    reference: [https://prtimes.jp/main/html/rd/p/000000116.000050979.html]
+  piui:
+    name: piui
+    reference: [https://prtimes.jp/main/html/rd/p/000000116.000050979.html]
+  haruta:
+    name: Haruta
+    reference: [https://prtimes.jp/main/html/rd/p/000000116.000050979.html]
+  tamerin:
+    name: Tamerin
+    reference: [https://prtimes.jp/main/html/rd/p/000000116.000050979.html]
+  satake:
+    name: Satake
+    reference: [https://prtimes.jp/main/html/rd/p/000000116.000050979.html]
+  o2:
+    name: O2
+    reference: [https://prtimes.jp/main/html/rd/p/000000116.000050979.html]

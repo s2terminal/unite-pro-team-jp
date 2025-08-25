@@ -59,6 +59,11 @@ reject:
   - member:
       out:
         - yakou
+    reference:
+      - https://x.com/RC_REJECT/status/1895006729597080041
+    date: 2025-02-27
+  - member:
+      out:
         - o2
       in:
         - haruto

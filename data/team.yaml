@@ -10,6 +10,12 @@ qtdig:
     - Sengoku Gaming
   reference:
     - https://qtdig.com/team/pokemon_unite/
+reject:
+  name: REJECT
+  alias:
+    - REJECT JSV
+  reference:
+    - https://reject.jp/team/pokemon-unite
 zeta-division:
   name: ZETA DIVISION
   reference:

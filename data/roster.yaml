@@ -44,6 +44,33 @@ qtdig:
         - omutero
     reference: [https://x.com/QT_DIG/status/1911705998638940342]
     date: 2025-04-14
+reject:
+  - member:
+      in:
+        - yakou
+        - piui
+        - haruta
+        - tamerin
+        - satake
+        - o2
+    reference:
+      - https://reject.jp/2024/05/27/%e3%80%90%e3%83%9d%e3%82%b1%e3%83%a2%e3%83%b3%e3%83%a6%e3%83%8a%e3%82%a4%e3%83%88%e3%80%91%e3%80%8creject-jsv%e3%80%8d%e3%81%a8%e3%81%97%e3%81%a6%e9%83%a8%e9%96%80%e8%a8%ad%e7%ab%8b%e5%8f%8a%e3%81%b3/
+    date: 2024-05-27
+  - member:
+      out:
+        - yakou
+    reference:
+      - https://x.com/RC_REJECT/status/1895006729597080041
+    date: 2025-02-27
+  - member:
+      out:
+        - o2
+      in:
+        - haruto
+        - pavone
+    reference:
+      - https://x.com/RC_REJECT/status/1906632576460321128
+    date: 2025-03-31
 zeta-division:
   - member:
       in:

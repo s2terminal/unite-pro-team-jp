@@ -95,6 +95,7 @@ player:
   o2:
     name: O2
     reference: [https://x.com/O2_unite]
+    memo: REJECTのboard memberとして活動を継続
   haruto:
     name: Haruto
     alias: [すらまる, 最低学年²]

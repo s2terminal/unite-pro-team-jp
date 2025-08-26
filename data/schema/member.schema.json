@@ -23,7 +23,8 @@
             "type": "array",
             "items": { "type": "string", "format": "uri" },
             "minItems": 1
-          }
+          },
+          "memo": { "type": "string" }
         },
         "required": ["name"],
         "anyOf": [

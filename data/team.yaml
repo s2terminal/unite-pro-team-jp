@@ -1,4 +1,11 @@
 # yaml-language-server: $schema=./schema/team.schema.json
+burning-core-toyama:
+  name: BURNING CORE TOYAMA
+  alias:
+    - BC Toyama
+    - BURNING CORE 富山
+  reference:
+    - https://burning-core.com/
 insomnia:
   name: INSOMNIA
   reference:

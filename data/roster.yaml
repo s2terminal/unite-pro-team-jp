@@ -1,4 +1,15 @@
 # yaml-language-server: $schema=./schema/roster.schema.json
+enterforce36:
+  - member:
+      in:
+        - kota
+        - nomu
+        - iskw
+        - seno
+        - cham
+    reference:
+      - https://enterforce-36.com/2025/06/14/pokemon-unite-div/
+    date: 2025-06-14
 insomnia:
   - member:
       in:

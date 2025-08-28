@@ -72,6 +72,18 @@ reject:
       - https://x.com/RC_REJECT/status/1906632576460321128
     date: 2025-03-31
     memo: O2はREJECTのboard memberとして活動を継続
+scarz:
+  - member:
+      in:
+        - cotora
+        - kamenero
+        - kusamusi
+        - shiganaki
+        - okamoto
+        - dorap1n
+    reference:
+      - https://www.scarz.net/news/25061902/
+    date: 2025-06-19
 zeta-division:
   - member:
       in:

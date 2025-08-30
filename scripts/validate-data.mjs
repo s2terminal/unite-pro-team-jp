@@ -125,10 +125,10 @@ async function validateAllSchemas(loaded) {
     const { ok, errors } = validateWithSchema(ajv, data, schema);
     if (!ok) {
       allOk = false;
-      console.error(`\n❌ Validation failed for ${dataLabel} against ${schemaLabel}`);
+      console.error(`\n❌ 検証失敗: ${dataLabel}（スキーマ: ${schemaLabel}）`);
       console.error(formatErrors(errors));
     } else {
-      console.log(`✅ ${dataLabel} is valid.`);
+      console.log(`✅ ${dataLabel} は有効です。`);
     }
   }
   return allOk;
@@ -150,11 +150,11 @@ function crossValidateRosterKeysAndMembers(memberJson, rosterJson, teamJson) {
 
   for (const [teamKey, changes] of Object.entries(rosterJson || {})) {
     if (!teamSlugs.has(teamKey)) {
-      crossErrors.push(`(roster).${teamKey} is not defined in team.yaml`);
+      crossErrors.push(`(roster).${teamKey} は team.yaml に定義がありません`);
     }
 
     if (!Array.isArray(changes)) {
-      crossErrors.push(`(roster).${teamKey} should be an array of roster entries`);
+      crossErrors.push(`(roster).${teamKey} はロスターの配列である必要があります`);
       continue;
     }
 
@@ -167,7 +167,7 @@ function crossValidateRosterKeysAndMembers(memberJson, rosterJson, teamJson) {
         if (Array.isArray(arr)) {
           for (const slug of arr) {
             if (!memberSlugs.has(slug)) {
-              crossErrors.push(`${pathBase}.${dir} contains unknown member slug '${slug}' not found in member.yaml`);
+              crossErrors.push(`${pathBase}.${dir} に未定義のメンバー・スラグ '${slug}' が含まれています（member.yaml に存在しません）`);
             }
           }
         }
@@ -184,15 +184,15 @@ async function runCrossValidation(loaded) {
   try {
     const errors = crossValidateRosterKeysAndMembers(loaded.data.member, loaded.data.roster, loaded.data.team);
     if (errors.length > 0) {
-      console.error(`\n❌ Cross-file validation failed (roster keys and member slugs)`);
+      console.error(`\n❌ ファイル横断の参照検証に失敗しました（roster のキーと member スラグ）`);
       console.error(errors.join('\n'));
       return false;
     } else {
-      console.log('✅ Cross-file references are consistent.');
+      console.log('✅ ファイル横断の参照は一貫しています。');
       return true;
     }
   } catch (e) {
-    console.error('\n❌ Cross-file validation crashed:', e);
+    console.error('\n❌ ファイル横断の検証でエラーが発生しました:', e);
     return false;
   }
 }
@@ -207,7 +207,7 @@ async function main() {
   if (!schemaOk || !crossOk) {
     process.exit(1);
   } else {
-    console.log('\nAll data files are valid.');
+    console.log('\nすべてのデータファイルは有効です。');
   }
 }
 

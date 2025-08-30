@@ -1,4 +1,24 @@
 # yaml-language-server: $schema=./schema/team.schema.json
+enterforce36:
+  name: ENTER FORCE.36
+  alias:
+    - ENTER FORCE 36
+    - E36
+  reference:
+    - https://enterforce-36.com/
+burning-core-toyama:
+  name: BURNING CORE TOYAMA
+  alias:
+    - BC Toyama
+    - BURNING CORE 富山
+  reference:
+    - https://burning-core.com/
+axiz:
+  name: AXIZ
+  alias:
+    - アクシズ
+  reference:
+    - https://axiz.gg/team/Pok%C3%A9mon%20UNITE/
 insomnia:
   name: INSOMNIA
   reference:

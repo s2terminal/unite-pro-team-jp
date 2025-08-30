@@ -26,16 +26,17 @@ const paths = {
 // ---------------------------------------------
 
 /** ルートからの絶対パスを解決 */
-/** @param {...string} p */
-const resolveRoot = (...p) => {
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = dirname(__filename);
-  const root = resolve(__dirname, '..');
-  return resolve(root, ...p);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const ROOT_DIR = resolve(__dirname, '..');
+
+/** @param {...string} paths */
+const resolveRoot = (...paths) => {
+  return resolve(ROOT_DIR, ...paths);
 };
 
 /** エラー整形 */
-/** @param {any[]} errors */
+/** @param {import('ajv').ErrorObject[]} errors */
 function formatErrors(errors) {
   return (errors || [])
     .map((e) => `${e.instancePath || '(root)'} ${e.message}${e.params ? ' ' + JSON.stringify(e.params) : ''}`)

@@ -101,7 +101,8 @@ async function validateAllSchemas(loaded) {
   addFormats(ajv);
 
   let allOk = true;
-  const dataset = Object.keys(loaded.data).map(type => ({
+  const types = /** @type {('member'|'roster'|'team')[]} */ (Object.keys(loaded.data));
+  const dataset = types.map(type => ({
     dataLabel: loaded.paths.data[type],
     schemaLabel: loaded.paths.schema[type],
     data: loaded.data[type],

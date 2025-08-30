@@ -8,57 +8,207 @@ import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import YAML from 'yaml';
 
-// ファイル読み込み
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const root = resolve(__dirname, '..');
-const files = [
-  { data: 'data/member.yaml', schema: 'data/schema/member.schema.json' },
-  { data: 'data/roster.yaml', schema: 'data/schema/roster.schema.json' },
-  { data: 'data/team.yaml', schema: 'data/schema/team.schema.json' }
-];
+const paths = {
+  data: {
+    member: 'data/member.yaml',
+    roster: 'data/roster.yaml',
+    team: 'data/team.yaml'
+  },
+  schema: {
+    member: 'data/schema/member.schema.json',
+    roster: 'data/schema/roster.schema.json',
+    team: 'data/schema/team.schema.json'
+  }
+};
 
-const validateSchema = async () => {
+// ---------------------------------------------
+// ユーティリティ関数
+// ---------------------------------------------
+
+/** ルートからの絶対パスを解決 */
+/** @param {...string} p */
+const resolveRoot = (...p) => {
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = dirname(__filename);
+  const root = resolve(__dirname, '..');
+  return resolve(root, ...p);
+};
+
+/** エラー整形 */
+/** @param {any[]} errors */
+function formatErrors(errors) {
+  return (errors || [])
+    .map((e) => `${e.instancePath || '(root)'} ${e.message}${e.params ? ' ' + JSON.stringify(e.params) : ''}`)
+    .join('\n');
+}
+
+/** YAML を JSON に読み込み */
+/** @param {string} relPath */
+async function loadYaml(relPath) {
+  const text = await readFile(resolveRoot(relPath), 'utf8');
+  return YAML.parse(text);
+}
+
+/** JSON ファイルを読み込み（スキーマ用） */
+/** @param {string} relPath */
+async function loadJson(relPath) {
+  const text = await readFile(resolveRoot(relPath), 'utf8');
+  return JSON.parse(text);
+}
+
+/** 全データ（YAML）と全スキーマ（JSON）を一括で読み込み */
+/**
+ * @typedef {Object} LoadedBundle
+ * @property {{member: any, roster: any, team: any}} data
+ * @property {{member: any, roster: any, team: any}} schemas
+ * @property {{data: {member: string, roster: string, team: string}, schema: {member: string, roster: string, team: string}}} paths
+ */
+/** @returns {Promise<LoadedBundle>} */
+async function loadAll() {
+  const [member, roster, team, memberSchema, rosterSchema, teamSchema] = await Promise.all([
+    loadYaml(paths.data.member),
+    loadYaml(paths.data.roster),
+    loadYaml(paths.data.team),
+    loadJson(paths.schema.member),
+    loadJson(paths.schema.roster),
+    loadJson(paths.schema.team)
+  ]);
+
+  return {
+    paths,
+    data: { member, roster, team },
+    schemas: { member: memberSchema, roster: rosterSchema, team: teamSchema }
+  };
+}
+
+// ---------------------------------------------
+// スキーマ検証
+// ---------------------------------------------
+
+/** AJV を用いて data と schema を検証 */
+/** @param {Ajv} ajv @param {any} dataJson @param {any} schemaJson */
+function validateWithSchema(ajv, dataJson, schemaJson) {
+  const validate = ajv.compile(schemaJson);
+  const ok = validate(dataJson);
+  return { ok, errors: ok ? [] : validate.errors || [] };
+}
+
+/** 複数ファイルのスキーマ検証を実行（事前に読み込んだデータ／スキーマを使用） */
+/** @param {LoadedBundle} loaded */
+async function validateAllSchemas(loaded) {
   const ajv = new Ajv({ allErrors: true, strict: false });
   addFormats(ajv);
 
-  /** @param {any[]} errors */
-  function formatErrors(errors) {
-    return errors
-      .map((e) => `${e.instancePath || '(root)'} ${e.message}${e.params ? ' ' + JSON.stringify(e.params) : ''}`)
-      .join('\n');
-  }
+  let allOk = true;
+  const dataset = [
+    {
+      dataLabel: loaded.paths.data.member,
+      schemaLabel: loaded.paths.schema.member,
+      data: loaded.data.member,
+      schema: loaded.schemas.member
+    },
+    {
+      dataLabel: loaded.paths.data.roster,
+      schemaLabel: loaded.paths.schema.roster,
+      data: loaded.data.roster,
+      schema: loaded.schemas.roster
+    },
+    {
+      dataLabel: loaded.paths.data.team,
+      schemaLabel: loaded.paths.schema.team,
+      data: loaded.data.team,
+      schema: loaded.schemas.team
+    }
+  ];
 
-  let failed = false;
-  for (const { data, schema } of files) {
-    const dataPath = resolve(root, data);
-    const schemaPath = resolve(root, schema);
-
-    const [yamlText, schemaText] = await Promise.all([
-      readFile(dataPath, 'utf8'),
-      readFile(schemaPath, 'utf8')
-    ]);
-
-    const json = YAML.parse(yamlText);
-    const schemaJson = JSON.parse(schemaText);
-
-    const validate = ajv.compile(schemaJson);
-    const ok = validate(json);
+  for (const { dataLabel, schemaLabel, data, schema } of dataset) {
+    const { ok, errors } = validateWithSchema(ajv, data, schema);
     if (!ok) {
-      failed = true;
-      console.error(`\n❌ Validation failed for ${data} against ${schema}`);
-      console.error(formatErrors(validate.errors || []));
+      allOk = false;
+      console.error(`\n❌ Validation failed for ${dataLabel} against ${schemaLabel}`);
+      console.error(formatErrors(errors));
     } else {
-      console.log(`✅ ${data} is valid.`);
+      console.log(`✅ ${dataLabel} is valid.`);
     }
   }
+  return allOk;
+}
 
-  if (failed) {
+// ---------------------------------------------
+// クロスファイル検証（roster <--> team / member）
+// ---------------------------------------------
+
+/** roster/team/member のキー整合チェックを行い、エラー一覧を返す */
+/** @param {any} memberJson @param {any} rosterJson @param {any} teamJson */
+function crossValidateRosterKeysAndMembers(memberJson, rosterJson, teamJson) {
+  /** @type {Set<string>} */
+  const memberSlugs = new Set(Object.keys((memberJson && memberJson.player) || {}));
+  /** @type {Set<string>} */
+  const teamSlugs = new Set(Object.keys(teamJson || {}));
+  /** @type {string[]} */
+  const crossErrors = [];
+
+  for (const [teamKey, changes] of Object.entries(rosterJson || {})) {
+    if (!teamSlugs.has(teamKey)) {
+      crossErrors.push(`(roster).${teamKey} is not defined in team.yaml`);
+    }
+
+    if (!Array.isArray(changes)) {
+      crossErrors.push(`(roster).${teamKey} should be an array of roster entries`);
+      continue;
+    }
+
+    changes.forEach((entry, idx) => {
+      const pathBase = `(roster).${teamKey}[${idx}].member`;
+      const member = entry && entry.member;
+      if (!member || typeof member !== 'object') return;
+      for (const dir of ['in', 'out']) {
+        const arr = member[dir];
+        if (Array.isArray(arr)) {
+          for (const slug of arr) {
+            if (!memberSlugs.has(slug)) {
+              crossErrors.push(`${pathBase}.${dir} contains unknown member slug '${slug}' not found in member.yaml`);
+            }
+          }
+        }
+      }
+    });
+  }
+
+  return crossErrors;
+}
+
+/** クロス検証の実行（事前に読み込んだデータを使用） */
+/** @param {LoadedBundle} loaded */
+async function runCrossValidation(loaded) {
+  try {
+    const errors = crossValidateRosterKeysAndMembers(loaded.data.member, loaded.data.roster, loaded.data.team);
+    if (errors.length > 0) {
+      console.error(`\n❌ Cross-file validation failed (roster keys and member slugs)`);
+      console.error(errors.join('\n'));
+      return false;
+    } else {
+      console.log('✅ Cross-file references are consistent.');
+      return true;
+    }
+  } catch (e) {
+    console.error('\n❌ Cross-file validation crashed:', e);
+    return false;
+  }
+}
+
+// ---------------------------------------------
+// main
+// ---------------------------------------------
+async function main() {
+  const loaded = await loadAll();
+  const schemaOk = await validateAllSchemas(loaded);
+  const crossOk = await runCrossValidation(loaded);
+  if (!schemaOk || !crossOk) {
     process.exit(1);
   } else {
     console.log('\nAll data files are valid.');
   }
 }
 
-// main
-await validateSchema();
+await main();

@@ -36,6 +36,10 @@ reject:
     - REJECT JSV
   reference:
     - https://reject.jp/team/pokemon-unite
+scarz:
+  name: SCARZ
+  reference:
+    - https://www.scarz.net/team/pokemon-unite/
 zeta-division:
   name: ZETA DIVISION
   reference:

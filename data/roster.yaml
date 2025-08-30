@@ -1,4 +1,22 @@
 # yaml-language-server: $schema=./schema/roster.schema.json
+burning-core-toyama:
+  - member:
+      in:
+        - harusame
+        - euclid
+        - "1st_ruru"
+        - zeras
+        - kageatai
+        - takubin
+    reference: [https://burning-core.com/news/2060]
+    date: 2025-01-21
+  - member:
+      out:
+        - kageatai
+      in:
+        - nyaga
+    reference: [https://x.com/burning_core/status/1912083488377127046]
+    date: 2025-04-15
 axiz:
   - member:
       in:

@@ -3,6 +3,7 @@ import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import href from '../lib/url';
 
 type Team = { slug: string; name: string; memo?: string };
 
@@ -22,7 +23,7 @@ export default function TeamList({ teams }: { teams: Team[] }) {
     >
       {teams.map((t) => (
         <Card key={t.slug} variant="outlined">
-          <CardActionArea href={`/team/${t.slug}/`}>
+          <CardActionArea href={href(['team', t.slug])}>
             <CardContent>
               <Typography variant="h6" component="div">{t.name}</Typography>
               {t.memo && (

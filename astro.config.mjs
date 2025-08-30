@@ -12,6 +12,8 @@ const owner = process.env.GITHUB_REPOSITORY?.split('/')?.[0];
 /** @type {import('astro').AstroUserConfig} */
 const config = {
   integrations: [react()],
+  // Generate directory-style URLs so GitHub Pages serves index.html under folders
+  trailingSlash: 'always',
 };
 
 // On GitHub Actions (project pages), hint Astro where the site will live so it generates correct URLs.

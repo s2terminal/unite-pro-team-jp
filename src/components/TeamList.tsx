@@ -22,7 +22,7 @@ export default function TeamList({ teams }: { teams: Team[] }) {
     >
       {teams.map((t) => (
         <Card key={t.slug} variant="outlined">
-          <CardActionArea href={`/team/${t.slug}/`}>
+          <CardActionArea href={`${import.meta.env.BASE_URL}team/${t.slug}/`}>
             <CardContent>
               <Typography variant="h6" component="div">{t.name}</Typography>
               {t.memo && (

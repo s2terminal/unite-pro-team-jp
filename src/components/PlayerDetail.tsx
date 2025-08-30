@@ -36,7 +36,7 @@ export default function PlayerDetail({ player, currentTeam, history, teamBySlug 
         <CardContent>
           <Typography variant="h6" gutterBottom>現在の所属</Typography>
           {currentTeam ? (
-            <Typography><Link href={`/team/${currentTeam}/`}>{teamBySlug[currentTeam]?.name ?? currentTeam}</Link></Typography>
+            <Typography><Link href={`${import.meta.env.BASE_URL}team/${currentTeam}/`}>{teamBySlug[currentTeam]?.name ?? currentTeam}</Link></Typography>
           ) : (
             <Typography color="text.secondary">所属なし</Typography>
           )}
@@ -50,7 +50,7 @@ export default function PlayerDetail({ player, currentTeam, history, teamBySlug 
             <Box sx={{ display: 'grid', gap: 1 }}>
               {history.map((h, idx) => (
                 <Typography key={idx}>
-                  <strong>{h.date}</strong> {h.action === 'in' ? '加入' : '離脱'} - <Link href={`/team/${h.team}/`}>{teamBySlug[h.team]?.name ?? h.team}</Link>
+                  <strong>{h.date}</strong> {h.action === 'in' ? '加入' : '離脱'} - <Link href={`${import.meta.env.BASE_URL}team/${h.team}/`}>{teamBySlug[h.team]?.name ?? h.team}</Link>
                 </Typography>
               ))}
             </Box>

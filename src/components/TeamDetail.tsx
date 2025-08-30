@@ -41,7 +41,7 @@ export default function TeamDetail({ team, current, history, playersBySlug }: {
           {current.length ? (
             <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
               {current.map((pslug) => (
-                <Chip key={pslug} clickable component="a" href={`/player/${pslug}/`} label={playersBySlug[pslug]?.name ?? pslug} />
+                <Chip key={pslug} clickable component="a" href={`${import.meta.env.BASE_URL}player/${pslug}/`} label={playersBySlug[pslug]?.name ?? pslug} />
               ))}
             </Stack>
           ) : (
@@ -63,7 +63,7 @@ export default function TeamDetail({ team, current, history, playersBySlug }: {
                       加入:{' '}
                       {h.member.in.map((s, i) => (
                         <>
-                          <Link key={`in-${s}`} href={`/player/${s}/`}>
+                          <Link key={`in-${s}`} href={`${import.meta.env.BASE_URL}player/${s}/`}>
                             {playersBySlug[s]?.name ?? s}
                           </Link>
                           {i < (h.member.in?.length ?? 0) - 1 ? ', ' : ''}
@@ -76,7 +76,7 @@ export default function TeamDetail({ team, current, history, playersBySlug }: {
                       {' '}離脱:{' '}
                       {h.member.out.map((s, i) => (
                         <>
-                          <Link key={`out-${s}`} href={`/player/${s}/`}>
+                          <Link key={`out-${s}`} href={`${import.meta.env.BASE_URL}player/${s}/`}>
                             {playersBySlug[s]?.name ?? s}
                           </Link>
                           {i < (h.member.out?.length ?? 0) - 1 ? ', ' : ''}

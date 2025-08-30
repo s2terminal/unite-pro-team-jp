@@ -12,7 +12,7 @@ export default function Header() {
           Unite Pro Teams JP
         </Typography>
         <Box sx={{ display: 'flex', gap: 2 }}>
-          <Link href="/" color="inherit" underline="hover">チーム一覧</Link>
+          <Link href={`${import.meta.env.BASE_URL}`} color="inherit" underline="hover">チーム一覧</Link>
         </Box>
       </Toolbar>
     </AppBar>

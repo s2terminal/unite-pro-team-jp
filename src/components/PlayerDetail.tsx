@@ -3,6 +3,7 @@ import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Link from '@mui/material/Link';
+import href from '../lib/url';
 
 type Team = { slug: string; name: string };
 type Player = { slug: string; name: string; alias?: string[]; reference?: string[] };
@@ -36,7 +37,7 @@ export default function PlayerDetail({ player, currentTeam, history, teamBySlug 
         <CardContent>
           <Typography variant="h6" gutterBottom>現在の所属</Typography>
           {currentTeam ? (
-            <Typography><Link href={`/team/${currentTeam}/`}>{teamBySlug[currentTeam]?.name ?? currentTeam}</Link></Typography>
+            <Typography><Link href={href(['team', currentTeam])}>{teamBySlug[currentTeam]?.name ?? currentTeam}</Link></Typography>
           ) : (
             <Typography color="text.secondary">所属なし</Typography>
           )}
@@ -50,7 +51,7 @@ export default function PlayerDetail({ player, currentTeam, history, teamBySlug 
             <Box sx={{ display: 'grid', gap: 1 }}>
               {history.map((h, idx) => (
                 <Typography key={idx}>
-                  <strong>{h.date}</strong> {h.action === 'in' ? '加入' : '離脱'} - <Link href={`/team/${h.team}/`}>{teamBySlug[h.team]?.name ?? h.team}</Link>
+                  <strong>{h.date}</strong> {h.action === 'in' ? '加入' : '離脱'} - <Link href={href(['team', h.team])}>{teamBySlug[h.team]?.name ?? h.team}</Link>
                 </Typography>
               ))}
             </Box>

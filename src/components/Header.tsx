@@ -3,6 +3,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
+import href from '../lib/url';
 
 export default function Header() {
   return (
@@ -12,7 +13,7 @@ export default function Header() {
           Unite Pro Teams JP
         </Typography>
         <Box sx={{ display: 'flex', gap: 2 }}>
-          <Link href="/" color="inherit" underline="hover">チーム一覧</Link>
+          <Link href={href('')} color="inherit" underline="hover">チーム一覧</Link>
         </Box>
       </Toolbar>
     </AppBar>

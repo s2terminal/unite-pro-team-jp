@@ -124,3 +124,44 @@ player:
     name: cham
     alias: [チャム]
     reference: [https://x.com/cham09126]
+  harusame:
+    name: はるさめ
+    reference: [https://x.com/somarion787]
+  euclid:
+    name: ユークリッド
+    reference: [https://x.com/Euclid_666_]
+  "1st_ruru":
+    name: 1st_ruru
+    reference: [https://x.com/0926mirror]
+  zeras:
+    name: ゼラス
+    reference: [https://x.com/zerasususu]
+  kageatai:
+    name: かげ値
+    alias: [まりかげ値]
+    reference: [https://x.com/kageatai_dayo]
+  takubin:
+    name: たくびん
+    reference: [https://x.com/takubin_pu]
+  nyaga:
+    name: おにゃが
+    alias: [Nyaga, Gyakubari]
+    reference: [https://x.com/Nyaga_gyakubari]
+  respectm:
+    name: Respect・M
+    reference: [https://x.com/SumiriA_]
+  yupono:
+    name: Yupono
+    reference: [https://x.com/soarin_yupono]
+  shiel:
+    name: shiel
+    reference: [https://x.com/hx1e_]
+  polin:
+    name: Polin
+    reference: [https://x.com/tmel_dlr]
+  bagel:
+    name: bagel
+    reference: [https://x.com/bagel_beguru]
+  laby:
+    name: Laby
+    reference: [https://x.com/xcicada3301x]

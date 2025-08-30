@@ -17,6 +17,42 @@ burning-core-toyama:
         - nyaga
     reference: [https://x.com/burning_core/status/1912083488377127046]
     date: 2025-04-15
+axiz:
+  - member:
+      in:
+        - yupono
+        - shiel
+        - polin
+        - bagel
+        - laby
+        - omutero
+    reference:
+      - https://axiz.gg/topics/public/jq8f9jh3nxe4083a.html
+    date: 2024-10-08
+  - member:
+      out:
+        - bagel
+        - laby
+        - omutero
+    reference:
+      - https://x.com/AXIZ_gg/status/1906632561419309072
+    date: 2025-03-31
+  - member:
+      in:
+        - mame
+        - kabikiller
+        - respectm
+    reference:
+      - https://axiz.gg/topics/public/gjpyybngbbemc501.html
+    date: 2025-04-15
+  - member:
+      out:
+        - mame
+        - polin
+        - respectm
+    reference:
+      - https://x.com/AXIZ_gg/status/1951206266812162161
+    date: 2025-08-01
 insomnia:
   - member:
       in:

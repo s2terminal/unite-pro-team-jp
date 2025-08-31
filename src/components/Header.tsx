@@ -10,7 +10,7 @@ export default function Header() {
     <AppBar position="static" color="primary">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Unite Pro Teams JP
+          <Link href={href('')} color="inherit" underline="hover">Unite Pro Teams JP</Link>
         </Typography>
         <Box sx={{ display: 'flex', gap: 2 }}>
           <Link href={href('')} color="inherit" underline="hover">チーム一覧</Link>

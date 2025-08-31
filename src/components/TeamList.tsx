@@ -26,11 +26,6 @@ export default function TeamList({ teams }: { teams: Team[] }) {
           <CardActionArea href={href(['team', t.slug])}>
             <CardContent>
               <Typography variant="h6" component="div">{t.name}</Typography>
-              {t.memo && (
-                <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
-                  {t.memo}
-                </Typography>
-              )}
             </CardContent>
           </CardActionArea>
         </Card>

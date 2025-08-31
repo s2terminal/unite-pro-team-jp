@@ -228,6 +228,25 @@ fennel:
     reference:
       - https://fennel-esports.com/news/team/2616/
     date: 2024-08-28
+  - member:
+      in:
+        - serata
+    reference:
+      - https://x.com/poke_unite_jp/status/1856532441604993080
+    date: 2024-11-13
+  - member:
+      out:
+        - ton-gg
+    reference:
+      - https://x.com/FENNEL_official/status/1917881696860659960
+    date: 2025-05-01
+    memo: TON・GGは後にREJECTのストリーマー部門に加入 https://reject.jp/2025/06/20/%E3%80%90streamer%E9%83%A8%E9%96%80%E3%80%91ton%E3%83%BBgg%E5%8A%A0%E5%85%A5%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/
+  - member:
+      out:
+        - lucapo
+    reference:
+      - https://x.com/FENNEL_official/status/1929825395232169986
+    date: 2025-06-03
 nagoya-oja:
   - member:
       in:

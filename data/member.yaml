@@ -219,7 +219,7 @@ player:
     alias: [ルカポー]
     reference: [https://x.com/po_o10xxx]
   mashio:
-    name: Mashio
+    name: Ma・shio
     alias: [ま・しお]
     reference: [https://x.com/mashimashio3]
   pyi:
@@ -232,6 +232,9 @@ player:
   yumenyan:
     name: yumenyan
     reference: [https://x.com/yumenyan06]
+  serata:
+    name: セラータ
+    reference: [https://x.com/serata_0227]
   panchop:
     name: Panchop
     alias: [ぱんちょっぷ]

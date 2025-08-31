@@ -24,11 +24,11 @@ export default function TeamDetail({ team, current, history, playersBySlug }: {
           <Typography variant="h4" gutterBottom>{team.name}</Typography>
           {team.memo && <Typography variant="body1" sx={{ mb: 1 }}>{team.memo}</Typography>}
           {!!team.alias?.length && (
-            <Typography variant="body2" color="text.secondary">別名: {team.alias.join(', ')}</Typography>
+            <Typography variant="body2" color="text.secondary">（{team.alias.join(', ')}）</Typography>
           )}
           {!!team.reference?.length && (
             <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-              参考: {team.reference.map((r, i) => (
+              {team.reference.map((r, i) => (
                 <Link key={i} href={r} target="_blank" rel="noopener noreferrer" sx={{ mr: 1 }}>{r}</Link>
               ))}
             </Typography>

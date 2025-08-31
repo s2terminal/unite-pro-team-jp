@@ -216,3 +216,15 @@ zeta-division:
     reference:
       - https://zetadivision.com/news/2025/05/21/34042
     date: 2025-05-21
+nagoya-oja:
+  - member:
+      in:
+        - hotarunoken
+        - aporo
+        - holly
+        - yama
+        - syu
+        - iroas
+    reference:
+      - https://prtimes.jp/main/html/rd/p/000000054.000060029.html
+    date: 2024-11-09

@@ -214,3 +214,25 @@ player:
   katastol:
     name: Katastol
     reference: [https://x.com/katastol_]
+  hotarunoken:
+    name: Hotaru-no-Ken
+    alias: [ホタルノケン]
+    reference: [https://x.com/nonpunch1]
+  aporo:
+    name: Aporo
+    alias: [あぽろ]
+    reference: [https://x.com/NOJ_Aporo]
+  holly:
+    name: Holly
+    reference: [https://x.com/NOJ_Holly]
+  yama:
+    name: Yama
+    alias: [やま]
+    reference: [https://x.com/NOJ_Yama]
+  syu:
+    name: syu
+    reference: [https://x.com/NOJ_syu]
+  iroas:
+    name: Iroas
+    alias: [イロアス]
+    reference: [https://x.com/NOJ_Iroas]

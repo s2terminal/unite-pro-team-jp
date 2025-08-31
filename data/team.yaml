@@ -44,6 +44,12 @@ zeta-division:
   name: ZETA DIVISION
   reference:
     - https://zetadivision.com/team/pokemon-unite
+nagoya-oja:
+  name: NAGOYA OJA
+  alias:
+    - 名古屋OJA
+  reference:
+    - https://www.nagoyaoja.com/
 yoshimoto-gaming:
   name: よしもとゲーミングめでたし
   reference:

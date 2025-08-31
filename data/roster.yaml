@@ -149,6 +149,47 @@ scarz:
     reference:
       - https://www.scarz.net/news/25061902/
     date: 2025-06-19
+yoshimoto-gaming:
+  - member:
+      in:
+        - azubelto
+        - tsutsumi
+        - hayatobi
+        - yamada
+        - lamiry
+        - awainu
+    reference:
+      - https://yoshimoto-gaming.com/news/2876/
+    date: 2024-09-08
+  - member:
+      in:
+        - yokuga
+    reference:
+      - https://x.com/GamingYOSHIMOTO/status/1877633983409750101
+    date: 2025-01-10
+  - member:
+      out:
+        - tsutsumi
+        - hayatobi
+        - yamada
+        - awainu
+    reference:
+      - https://x.com/GamingYOSHIMOTO/status/1906632573062979981
+    date: 2025-03-31
+  - member:
+      in:
+        - chanme
+        - arcana
+        - vin
+    reference:
+      - https://x.com/GamingYOSHIMOTO/status/1912068388693717381
+    date: 2025-04-15
+  - member:
+      out:
+        - arcana
+    reference:
+      - https://x.com/GamingYOSHIMOTO/status/1953750533249945898
+    date: 2025-08-08
 zeta-division:
   - member:
       in:
@@ -187,3 +228,15 @@ fennel:
     reference:
       - https://fennel-esports.com/news/team/2616/
     date: 2024-08-28
+nagoya-oja:
+  - member:
+      in:
+        - hotarunoken
+        - aporo
+        - holly
+        - yama
+        - syu
+        - iroas
+    reference:
+      - https://prtimes.jp/main/html/rd/p/000000054.000060029.html
+    date: 2024-11-09

@@ -175,3 +175,15 @@ zeta-division:
     reference:
       - https://zetadivision.com/news/2025/05/21/34042
     date: 2025-05-21
+fennel:
+  - member:
+      in:
+        - lucapo
+        - mashio
+        - pyi
+        - ton-gg
+        - yumenyan
+        - panchop
+    reference:
+      - https://fennel-esports.com/news/team/2616/
+    date: 2024-08-28

@@ -10,6 +10,10 @@ player:
   tsuntsun:
     name: TsunTsun
     reference: [https://x.com/tun4dd]
+  tsutsumi:
+    name: ツツミ
+    alias: [Tsutsumi]
+    reference: [https://x.com/unite_kakkin]
   usakazu:
     name: USAKAZU
     reference: [https://x.com/usakazuda]
@@ -25,6 +29,26 @@ player:
   vin:
     name: びいん
     reference: [https://x.com/shir_sw]
+  arcana:
+    name: あるかな
+    alias: [arcana]
+    reference: [https://x.com/uiosdh]
+  awainu:
+    name: あわいぬ
+    alias: [Awainu]
+    reference: [https://x.com/AwaichanX]
+  azubelto:
+    name: あずべると
+    alias: [Azubelto]
+    reference: [https://x.com/_azu_desu_]
+  lamiry:
+    name: らみりー
+    alias: [Lamiliy]
+    reference: [https://x.com/Lamiliy_D4]
+  yokuga:
+    name: ヨクガ
+    alias: [Yokuga]
+    reference: [https://x.com/yokuga89]
   kabikiller:
     name: kabikiller
     reference: [https://x.com/kabi_nnn]
@@ -79,6 +103,10 @@ player:
   yakou:
     name: Yakou
     reference: [https://x.com/yakoulamperouge]
+  yamada:
+    name: 山田
+    alias: [Yamada]
+    reference: [https://x.com/yamadaaaaaaaavv]
   piui:
     name: piui
     reference: [https://x.com/piui037]

@@ -168,15 +168,19 @@ yoshimoto-gaming:
       - https://x.com/GamingYOSHIMOTO/status/1877633983409750101
     date: 2025-01-10
   - member:
-      in:
-        - chanme
-        - arcana
-        - vin
       out:
         - tsutsumi
         - hayatobi
         - yamada
         - awainu
+    reference:
+      - https://x.com/GamingYOSHIMOTO/status/1906632573062979981
+    date: 2025-03-31
+  - member:
+      in:
+        - chanme
+        - arcana
+        - vin
     reference:
       - https://x.com/GamingYOSHIMOTO/status/1912068388693717381
     date: 2025-04-15

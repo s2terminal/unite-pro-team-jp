@@ -149,7 +149,7 @@ scarz:
     reference:
       - https://www.scarz.net/news/25061902/
     date: 2025-06-19
-yoshimoto-gaming-medetashi:
+yoshimoto-gaming:
   - member:
       in:
         - azubelto
@@ -165,21 +165,26 @@ yoshimoto-gaming-medetashi:
       in:
         - yokuga
     reference:
-      - https://nitter.net/GamingYOSHIMOTO/status/1877633983409750101
+      - https://x.com/GamingYOSHIMOTO/status/1877633983409750101
     date: 2025-01-10
   - member:
       in:
         - chanme
         - arcana
         - vin
+      out:
+        - tsutsumi
+        - hayatobi
+        - yamada
+        - awainu
     reference:
-      - https://nitter.net/GamingYOSHIMOTO/status/1912068388693717381
+      - https://x.com/GamingYOSHIMOTO/status/1912068388693717381
     date: 2025-04-15
   - member:
       out:
         - arcana
     reference:
-      - https://nitter.net/GamingYOSHIMOTO/status/1953750533249945898
+      - https://x.com/GamingYOSHIMOTO/status/1953750533249945898
     date: 2025-08-08
 zeta-division:
   - member:

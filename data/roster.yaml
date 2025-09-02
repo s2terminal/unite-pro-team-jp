@@ -82,6 +82,12 @@ insomnia:
     reference:
       - https://x.com/insomnia_esp/status/1920419131683127399
     date: 2025-05-08
+  - member:
+      out:
+        - luuna
+    reference:
+      - https://x.com/insomnia_esp/status/1962440291832734150
+    date: 2025-09-01
 qtdig:
   - member:
       in:

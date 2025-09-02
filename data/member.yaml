@@ -1,7 +1,7 @@
 # yaml-language-server: $schema=./schema/member.schema.json
 player:
   luuna:
-    name: Lunna
+    name: Luuna
     reference: [https://x.com/lunana__a]
   obuyan:
     name: Obuyan

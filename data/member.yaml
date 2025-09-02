@@ -268,9 +268,8 @@ player:
     name: ラティ
     alias: []
   kuro:
-    name: kuro
-    alias: [くろあーる]
-    reference: [https://x.com/kuro_unite]
+    name: くろあーる
+    alias: []
   maecha:
     name: まえちゃ
     alias: [Maecha]

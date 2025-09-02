@@ -261,3 +261,31 @@ player:
     name: Iroas
     alias: [イロアス]
     reference: [https://x.com/NOJ_Iroas]
+  pixel:
+    name: Pixel
+    alias: [ピクセル]
+  rati:
+    name: ラティ
+    alias: []
+  kuro:
+    name: kuro
+    alias: [くろあーる]
+    reference: [https://x.com/kuro_unite]
+  maecha:
+    name: まえちゃ
+    alias: [Maecha]
+  betchin:
+    name: Betchin
+    alias: [べちん]
+    reference: [https://x.com/s1aJF]
+  gekkoan:
+    name: 月光闇
+    alias: [GekoAnn]
+    reference: [https://x.com/GekoAnn]
+  wafu:
+    name: Wafu
+    alias: [わふ]
+    reference: [https://x.com/wafuchan_n]
+  notgglemon:
+    name: NotGGLemon
+    reference: [https://x.com/NotGGLemon]

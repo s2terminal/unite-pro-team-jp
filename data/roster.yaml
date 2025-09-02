@@ -259,3 +259,53 @@ nagoya-oja:
     reference:
       - https://prtimes.jp/main/html/rd/p/000000054.000060029.html
     date: 2024-11-09
+eldivegaming:
+  - member:
+      in:
+        - betchin
+        - gekkoan
+        - omutero
+        - wafu
+        - yupono
+        - 1levup
+    reference:
+      - https://eldivegaming.com/news/2023/0003.html
+    date: 2023-03-01
+  - member:
+      in:
+        - notgglemon
+    reference:
+      - https://eldivegaming.com/news/2023/0007.html
+    date: 2023-06-01
+  - member:
+      out:
+        - 1levup
+    reference:
+      - https://eldivegaming.com/news/2023/0008.html
+    date: 2023-06-09
+  - member:
+      in:
+        - pixel
+        - rati
+        - kuro
+    reference:
+      - https://eldivegaming.com/news/2023/0016.html
+    date: 2023-10-27
+  - member:
+      out:
+        - omutero
+    reference:
+      - https://eldivegaming.com/news/2024/0004.html
+    date: 2024-03-01
+  - member:
+      in:
+        - maecha
+    reference:
+      - https://eldivegaming.com/news/2024/0006.html
+    date: 2024-04-01
+  - member:
+      out:
+        - rati
+    reference:
+      - https://eldivegaming.com/news/2024/0010.html
+    date: 2024-06-01

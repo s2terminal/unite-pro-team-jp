@@ -259,3 +259,43 @@ nagoya-oja:
     reference:
       - https://prtimes.jp/main/html/rd/p/000000054.000060029.html
     date: 2024-11-09
+reignite:
+  - member:
+      in:
+        - haguking
+        - matcharyokucha
+        - gotty
+        - arumini
+        - nogasazu
+    reference:
+      - https://reignite.jp/5179/
+    date: 2024-11-29
+  - member:
+      out:
+        - matcharyokucha
+    reference:
+      - https://reignite.jp/5490/
+    date: 2025-03-11
+  - member:
+      in:
+        - rururu
+        - pnt
+    reference:
+      - https://reignite.jp/5660/
+    date: 2025-04-14
+  - member:
+      out:
+        - pnt
+    reference:
+      - https://reignite.jp/5822/
+    date: 2025-05-23
+  - member:
+      out:
+        - haguking
+        - arumini
+        - gotty
+        - nogasazu
+        - rururu
+    reference:
+      - https://reignite.jp/5886/
+    date: 2025-06-16

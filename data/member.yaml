@@ -261,3 +261,26 @@ player:
     name: Iroas
     alias: [イロアス]
     reference: [https://x.com/NOJ_Iroas]
+  arumini:
+    name: あるみに
+    alias: [Arumini]
+  gotty:
+    name: ごってぃー
+    reference: [https://x.com/S_Sangou]
+  haguking:
+    name: ハグキ王
+    reference: [https://x.com/hagukin_GG]
+  matcharyokucha:
+    name: 抹茶緑茶
+    reference: [https://x.com/mutimoti0]
+  nogasazu:
+    name: 逃さずのか
+    alias: [逃さずの石橋]
+    reference: [https://x.com/nogasazu]
+  pnt:
+    name: "Pんt"
+    alias: ["Pなつ"]
+    reference: [https://x.com/p_nuts_2]
+  rururu:
+    name: ルるる
+    reference: [https://x.com/Rururu_wakame]

@@ -21,11 +21,11 @@ export default function PlayerDetail({ player, currentTeam, history, teamBySlug 
         <CardContent>
           <Typography variant="h4" gutterBottom>{player?.name ?? player.slug}</Typography>
           {!!player?.alias?.length && (
-            <Typography variant="body2" color="text.secondary">別名: {player.alias.join(', ')}</Typography>
+            <Typography variant="body2" color="text.secondary">（{player.alias.join(', ')}）</Typography>
           )}
           {!!player?.reference?.length && (
             <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-              参考: {player.reference.map((r, i) => (
+              {player.reference.map((r, i) => (
                 <Link key={i} href={r} target="_blank" rel="noopener noreferrer" sx={{ mr: 1 }}>{r}</Link>
               ))}
             </Typography>
@@ -33,16 +33,14 @@ export default function PlayerDetail({ player, currentTeam, history, teamBySlug 
         </CardContent>
       </Card>
 
-      <Card>
-        <CardContent>
-          <Typography variant="h6" gutterBottom>現在の所属</Typography>
-          {currentTeam ? (
-            <Typography><Link href={href(['team', currentTeam])}>{teamBySlug[currentTeam]?.name ?? currentTeam}</Link></Typography>
-          ) : (
-            <Typography color="text.secondary">所属なし</Typography>
-          )}
-        </CardContent>
-      </Card>
+      {currentTeam ? (
+        <Card>
+          <CardContent>
+            <Typography variant="h6" gutterBottom>現在の所属</Typography>
+              <Typography><Link href={href(['team', currentTeam])}>{teamBySlug[currentTeam]?.name ?? currentTeam}</Link></Typography>
+          </CardContent>
+        </Card>
+      ) : null}
 
       <Card>
         <CardContent>

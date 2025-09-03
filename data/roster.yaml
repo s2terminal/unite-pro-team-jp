@@ -330,6 +330,26 @@ eldivegaming:
       - https://eldivegaming.com/news/2023/0008.html
     date: 2023-06-09
   - member:
+      out:
+        - betchin
+        - gekkoan
+    reference:
+      - https://eldivegaming.com/news/2023/0011.html
+    date: 2023-08-15
+  - member:
+      out:
+        - wafu
+        - yupono
+    reference:
+      - https://eldivegaming.com/news/2023/0013.html
+    date: 2023-09-04
+  - member:
+      out:
+        - notgglemon
+    reference:
+      - https://eldivegaming.com/news/2023/0014.html
+    date: 2023-09-19
+  - member:
       in:
         - pixel
         - rati
@@ -337,6 +357,12 @@ eldivegaming:
     reference:
       - https://eldivegaming.com/news/2023/0016.html
     date: 2023-10-27
+  - member:
+      in:
+        - ajitama
+    reference:
+      - https://x.com/dive_el/status/1738122208466137286
+    date: 2023-12-22
   - member:
       out:
         - omutero

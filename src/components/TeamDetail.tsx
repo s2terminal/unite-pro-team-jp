@@ -63,12 +63,12 @@ export default function TeamDetail({ team, current, history, playersBySlug }: {
                     <Typography component="span">
                       加入:{' '}
                       {h.member.in.map((s, i) => (
-                        <>
-                          <Link key={`in-${s}`} href={href(['player', s])}>
+                        <span key={`in-span-${s}`}>
+                          <Link href={href(['player', s])}>
                             {playersBySlug[s]?.name ?? s}
                           </Link>
                           {i < (h.member.in?.length ?? 0) - 1 ? ', ' : ''}
-                        </>
+                        </span>
                       ))}
                     </Typography>
                   )}
@@ -76,22 +76,22 @@ export default function TeamDetail({ team, current, history, playersBySlug }: {
                     <Typography component="span">
                       {' '}離脱:{' '}
                       {h.member.out.map((s, i) => (
-                        <>
-                          <Link key={`out-${s}`} href={href(['player', s])}>
+                        <span key={`out-span-${s}`}>
+                          <Link href={href(['player', s])}>
                             {playersBySlug[s]?.name ?? s}
                           </Link>
                           {i < (h.member.out?.length ?? 0) - 1 ? ', ' : ''}
-                        </>
+                        </span>
                       ))}
                     </Typography>
                   )}
                   {!!h.reference?.length && (
                     <Typography component="span" color="text.secondary"> [
                       {(h.reference ?? []).map((r, i) => (
-                        <>
-                          <Link key={i} href={r} target="_blank" rel="noopener noreferrer" sx={{ mr: 0.5 }}>{`参考${i + 1}`}</Link>
+                        <span key={`ref-span-${r}`}>
+                          <Link href={r} target="_blank" rel="noopener noreferrer" sx={{ mr: 0.5 }}>{`参考${i + 1}`}</Link>
                           {i < ((h.reference?.length ?? 0) - 1) ? ' ' : ''}
-                        </>
+                        </span>
                       ))}
                     ]</Typography>
                   )}

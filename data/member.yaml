@@ -332,3 +332,26 @@ player:
   mare:
     name: mare
     reference: [https://x.com/uniteniteu]
+  kakigoya-jp:
+    name: Kakigoya JP
+    reference: [https://x.com/kakigoya_jp]
+  orenonaha:
+    name: 俺の名はn
+    alias: [orenonaha]
+    reference: [https://x.com/orenonaha_nasu]
+  b1:
+    name: びい
+    alias: [b1]
+    reference: [https://x.com/b1nyazz]
+  saikyomanji:
+    name: 最強ちゃん卍
+    alias: [Saikyomanji]
+    reference: [https://x.com/eph7nknxRFRtwXv]
+  kapio:
+    name: かぴお
+    alias: [Kapio]
+    reference: [https://x.com/Kapio_MANE]
+  slickdosei:
+    name: どせい
+    alias: [Slickdosei]
+    reference: [https://x.com/Slickdosei]

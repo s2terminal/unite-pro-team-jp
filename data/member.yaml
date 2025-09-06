@@ -130,7 +130,7 @@ player:
     reference: [https://x.com/Haruto_4_4]
   pavone:
     name: Pavóne
-    alias: [Pavone, Ireteya]
+    alias: [Pavone, Ireteya, いれてや]
     reference: [https://x.com/Pavone0223125]
   cotora:
     name: cotoRa
@@ -154,6 +154,10 @@ player:
     name: Kota
     alias: [コータ]
     reference: [https://x.com/RK_01130417]
+  nerie:
+    name: Nerie
+    alias: [ねりー]
+    reference: [https://x.com/tukaigeko]
   nomu:
     name: Nomu
     alias: [ノム]
@@ -317,3 +321,14 @@ player:
     name: あじたま
     alias: [Ajitama]
     reference: [https://x.com/Ajitama_unite]
+  sona:
+    name: Sona
+    alias: [そな]
+    reference: [https://x.com/sonapokeu]
+  ryunun:
+    name: Ryunun
+    alias: [りゅーぬん]
+    reference: [https://x.com/Ryunun0814]
+  mare:
+    name: mare
+    reference: [https://x.com/uniteniteu]

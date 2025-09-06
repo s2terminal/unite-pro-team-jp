@@ -423,3 +423,36 @@ realize:
         - nerie
     reference: [https://x.com/REALIZE_GO/status/1917504207994904699]
     date: 2025-04-30
+igzist:
+  - member:
+      in:
+        - kakigoya-jp
+        - orenonaha
+        - b1
+        - tomy
+        - saikyomanji
+    reference:
+      - https://igzist-gg.com/news/1301/
+    date: 2025-03-18
+  - member:
+      in:
+        - kapio
+        - slickdosei
+    reference:
+      - https://igzist-gg.com/news/1333/
+    date: 2025-04-17
+  - member:
+      out:
+        - tomy
+    reference:
+      - https://igzist-gg.com/news/1348/
+    date: 2025-05-27
+  - member:
+      out:
+        - orenonaha
+        - b1
+        - kapio
+        - slickdosei
+    reference:
+      - https://x.com/IGZIST_GG/status/1950874086961254780
+    date: 2025-07-31

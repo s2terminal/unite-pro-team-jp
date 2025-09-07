@@ -25,45 +25,54 @@ let cache: {
 } = {};
 
 // 個別YAMLの型（構造）
-export type TeamYaml = Record<string, {
-  name: string;
-  alias?: string[];
-  reference?: string[];
-  memo?: string;
-}>;
-
-export type MemberYaml = {
-  player: Record<string, {
+export type TeamYaml = Record<
+  string,
+  {
     name: string;
     alias?: string[];
     reference?: string[];
-  }>;
+    memo?: string;
+  }
+>;
+
+export type MemberYaml = {
+  player: Record<
+    string,
+    {
+      name: string;
+      alias?: string[];
+      reference?: string[];
+    }
+  >;
 };
 
-export type RosterYaml = Record<string, Array<{
-  date: string;
-  member: { in?: string[]; out?: string[] };
-  reference?: string[];
-}>>;
+export type RosterYaml = Record<
+  string,
+  Array<{
+    date: string;
+    member: { in?: string[]; out?: string[] };
+    reference?: string[];
+  }>
+>;
 
 // データ別ローダー：ファイルパスの責務をここに集約
 export async function loadTeamYaml(): Promise<TeamYaml> {
   if (CACHE_ENABLED && cache.team) return cache.team;
-  const data = await readYaml(TEAM_YAML_PATH) as TeamYaml;
+  const data = (await readYaml(TEAM_YAML_PATH)) as TeamYaml;
   if (CACHE_ENABLED) cache.team = data;
   return data;
 }
 
 export async function loadMemberYaml(): Promise<MemberYaml> {
   if (CACHE_ENABLED && cache.member) return cache.member;
-  const data = await readYaml(MEMBER_YAML_PATH) as MemberYaml;
+  const data = (await readYaml(MEMBER_YAML_PATH)) as MemberYaml;
   if (CACHE_ENABLED) cache.member = data;
   return data;
 }
 
 export async function loadRosterYaml(): Promise<RosterYaml> {
   if (CACHE_ENABLED && cache.roster) return cache.roster;
-  const data = await readYaml(ROSTER_YAML_PATH) as RosterYaml;
+  const data = (await readYaml(ROSTER_YAML_PATH)) as RosterYaml;
   if (CACHE_ENABLED) cache.roster = data;
   return data;
 }

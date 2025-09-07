@@ -27,10 +27,7 @@
           "memo": { "type": "string" }
         },
         "required": ["name"],
-        "anyOf": [
-          { "required": ["reference"] },
-          { "required": ["alias"] }
-        ]
+        "anyOf": [{ "required": ["reference"] }, { "required": ["alias"] }]
       }
     }
   },

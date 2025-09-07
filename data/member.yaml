@@ -86,7 +86,7 @@ player:
   wajiro:
     name: Wajiro
     reference: [https://x.com/waji_noda]
-  "1levup":
+  '1levup':
     name: 1LevUP
     alias: [えなこん]
     reference: [https://x.com/Matyfas]
@@ -180,7 +180,7 @@ player:
   euclid:
     name: ユークリッド
     reference: [https://x.com/Euclid_666_]
-  "1st_ruru":
+  '1st_ruru':
     name: 1st_ruru
     reference: [https://x.com/0926mirror]
   zeras:
@@ -231,7 +231,7 @@ player:
     alias: [shimepyi]
     reference: [https://x.com/u_x_v_]
   ton-gg:
-    name: "TON・GG"
+    name: 'TON・GG'
     reference: [https://x.com/TON0465]
   yumenyan:
     name: yumenyan
@@ -282,8 +282,8 @@ player:
     alias: [逃さずの石橋]
     reference: [https://x.com/nogasazu]
   pnt:
-    name: "Pんt"
-    alias: ["Pなつ"]
+    name: 'Pんt'
+    alias: ['Pなつ']
     reference: [https://x.com/p_nuts_2]
   rururu:
     name: ルるる

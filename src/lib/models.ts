@@ -23,7 +23,7 @@ export type RosterChange = {
   date: string; // ISO-like string in YAML
   member: { in?: PlayerSlug[]; out?: PlayerSlug[] };
   reference?: string[];
-}
+};
 
 // YAML型はyamlLoaderからimport
 
@@ -41,12 +41,12 @@ export async function getTeams(): Promise<Team[]> {
 
 export async function getTeamSlugs(): Promise<TeamSlug[]> {
   const teams = await getTeams();
-  return teams.map(t => t.slug);
+  return teams.map((t) => t.slug);
 }
 
 export async function getTeamBySlug(slug: TeamSlug): Promise<Team | undefined> {
   const teams = await getTeams();
-  return teams.find(t => t.slug === slug);
+  return teams.find((t) => t.slug === slug);
 }
 
 export async function getPlayers(): Promise<Player[]> {
@@ -63,7 +63,7 @@ export async function getPlayers(): Promise<Player[]> {
 async function getPlayerSlugs(): Promise<PlayerSlug[]> {
   // member.yamlに定義されているplayerと、roster.yamlに登場するplayerの和集合
   const [players, rosters] = await Promise.all([getPlayers(), getRosters()]);
-  const set = new Set<PlayerSlug>(players.map(p => p.slug));
+  const set = new Set<PlayerSlug>(players.map((p) => p.slug));
   for (const changes of rosters.values()) {
     for (const ch of changes) {
       for (const p of ch.member?.in ?? []) set.add(p);
@@ -79,14 +79,16 @@ export async function getAllPlayerSlugs(): Promise<PlayerSlug[]> {
 
 export async function getPlayerBySlug(slug: PlayerSlug): Promise<Player | undefined> {
   const players = await getPlayers();
-  return players.find(p => p.slug === slug);
+  return players.find((p) => p.slug === slug);
 }
 
 export async function getRosters(): Promise<Map<TeamSlug, RosterChange[]>> {
   const data = await loadRosterYaml();
   const map = new Map<TeamSlug, RosterChange[]>();
   for (const [teamSlug, changes] of Object.entries(data)) {
-    const sorted = [...(changes ?? [])].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+    const sorted = [...(changes ?? [])].sort(
+      (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
+    );
     map.set(teamSlug, sorted);
   }
   return map;

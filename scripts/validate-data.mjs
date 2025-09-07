@@ -12,13 +12,13 @@ const paths = {
   data: {
     member: 'data/member.yaml',
     roster: 'data/roster.yaml',
-    team: 'data/team.yaml'
+    team: 'data/team.yaml',
   },
   schema: {
     member: 'data/schema/member.schema.json',
     roster: 'data/schema/roster.schema.json',
-    team: 'data/schema/team.schema.json'
-  }
+    team: 'data/schema/team.schema.json',
+  },
 };
 
 // ---------------------------------------------
@@ -39,7 +39,10 @@ const resolveRoot = (...paths) => {
 /** @param {import('ajv').ErrorObject[]} errors */
 function formatErrors(errors) {
   return (errors || [])
-    .map((e) => `${e.instancePath || '(root)'} ${e.message}${e.params ? ' ' + JSON.stringify(e.params) : ''}`)
+    .map(
+      (e) =>
+        `${e.instancePath || '(root)'} ${e.message}${e.params ? ' ' + JSON.stringify(e.params) : ''}`
+    )
     .join('\n');
 }
 
@@ -72,13 +75,13 @@ async function loadAll() {
     loadYaml(paths.data.team),
     loadJson(paths.schema.member),
     loadJson(paths.schema.roster),
-    loadJson(paths.schema.team)
+    loadJson(paths.schema.team),
   ]);
 
   return {
     paths,
     data: { member, roster, team },
-    schemas: { member: memberSchema, roster: rosterSchema, team: teamSchema }
+    schemas: { member: memberSchema, roster: rosterSchema, team: teamSchema },
   };
 }
 
@@ -102,11 +105,11 @@ async function validateAllSchemas(loaded) {
 
   let allOk = true;
   const types = /** @type {('member'|'roster'|'team')[]} */ (Object.keys(loaded.data));
-  const dataset = types.map(type => ({
+  const dataset = types.map((type) => ({
     dataLabel: loaded.paths.data[type],
     schemaLabel: loaded.paths.schema[type],
     data: loaded.data[type],
-    schema: loaded.schemas[type]
+    schema: loaded.schemas[type],
   }));
 
   for (const { dataLabel, schemaLabel, data, schema } of dataset) {
@@ -155,7 +158,9 @@ function crossValidateRosterKeysAndMembers(memberJson, rosterJson, teamJson) {
         if (Array.isArray(arr)) {
           for (const slug of arr) {
             if (!memberSlugs.has(slug)) {
-              crossErrors.push(`${pathBase}.${dir} に未定義のメンバー・スラグ '${slug}' が含まれています（member.yaml に存在しません）`);
+              crossErrors.push(
+                `${pathBase}.${dir} に未定義のメンバー・スラグ '${slug}' が含まれています（member.yaml に存在しません）`
+              );
             }
           }
         }
@@ -170,7 +175,11 @@ function crossValidateRosterKeysAndMembers(memberJson, rosterJson, teamJson) {
 /** @param {LoadedBundle} loaded */
 async function runCrossValidation(loaded) {
   try {
-    const errors = crossValidateRosterKeysAndMembers(loaded.data.member, loaded.data.roster, loaded.data.team);
+    const errors = crossValidateRosterKeysAndMembers(
+      loaded.data.member,
+      loaded.data.roster,
+      loaded.data.team
+    );
     if (errors.length > 0) {
       console.error(`\n❌ ファイル横断の参照検証に失敗しました（roster のキーと member スラグ）`);
       console.error(errors.join('\n'));

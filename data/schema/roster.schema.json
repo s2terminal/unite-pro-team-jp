@@ -26,10 +26,7 @@
               "uniqueItems": true
             }
           },
-          "anyOf": [
-            { "required": ["in"] },
-            { "required": ["out"] }
-          ]
+          "anyOf": [{ "required": ["in"] }, { "required": ["out"] }]
         },
         "reference": {
           "type": "array",

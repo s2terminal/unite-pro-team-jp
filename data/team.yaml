@@ -23,19 +23,27 @@ insomnia:
   name: INSOMNIA
   reference:
     - https://insomnia.zone/
-  memo: LRAというチームが前身。PUACL2025 1位
+  memo: INSOMNIAのポケモンユナイト部門は、LRAというチームが前身として発足したプロチーム。
+    東京都墨田区を拠点としている。
+    Pokémon UNITE Asia Champions League 2025 FINALS（PUACL 2025 FINALS）にてアジア1位を獲得した。
 qtdig:
   name: QT DIG∞
   alias:
     - Sengoku Gaming
+    - キューティーディグ
   reference:
     - https://qtdig.com/team/pokemon_unite/
+  memo: QT DIG∞は、福岡・天神の「esports Challenger’s Park」を本拠地に活動するプロチーム。
+    2025年4月に、Sengoku GamingからQT DIG∞にチーム名を変更。
 reject:
   name: REJECT
   alias:
     - REJECT JSV
   reference:
     - https://reject.jp/team/pokemon-unite
+  memo: REJECTのポケモンユナイト部門は、2024年5月に発足したプロチーム。
+    JSV（Japan Super Victory）というチームを前身としている。
+    ポケモンジャパンチャンピオンシップス2025（PJCS2025）にて日本1位を獲得した。
 scarz:
   name: SCARZ
   reference:
@@ -70,10 +78,12 @@ reignite:
 eldivegaming:
   name: elDiveGaming
   alias:
-    - elDive Gaming
-    - エルダイブゲーミング
+    - えるだいぶ
   reference:
     - https://eldivegaming.com/
+  memo: elDive Gamingのポケモンユナイト部門は、2023年から活動している古参のプロチーム。
+    北海道を拠点としている。
+    ポケモンユナイトの大会への参戦のほか、全国のショッピングモールでのティーチングイベントなども積極的に行っている。
 realize:
   name: REALIZE
   alias:

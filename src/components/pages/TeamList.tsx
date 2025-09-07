@@ -37,21 +37,70 @@ export default function TeamList({
         }}
       >
         {teams.map((t) => (
-          <Card key={t.slug} variant="outlined">
-            <CardActionArea href={href(['team', t.slug])}>
+          <Card
+            key={t.slug}
+            variant="outlined"
+            sx={{
+              display: 'flex',
+            }}
+          >
+            <CardActionArea
+              component="div"
+              role="link"
+              tabIndex={0}
+              sx={{
+                flexGrow: 1,
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                minHeight: 96,
+                '&:hover': {
+                  backgroundColor: 'action.hover',
+                },
+              }}
+              onClick={(e) => {
+                const target = e.target as HTMLElement;
+                if (target?.closest('a')) return; // 子要素のリンククリックは優先
+                window.location.href = href(['team', t.slug]);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  const target = e.target as HTMLElement;
+                  if (target?.closest('a')) return;
+                  e.preventDefault();
+                  window.location.href = href(['team', t.slug]);
+                }
+              }}
+            >
               <CardContent>
                 <Typography variant="h6" component="div">
-                  {t.name}
+                  <Box
+                    component="span"
+                    sx={{
+                      color: 'primary.main',
+                      textDecoration: 'underline',
+                      textUnderlineOffset: '3px',
+                      textDecorationThickness: '1.5px',
+                      transition: 'color 0.2s ease, text-decoration-color 0.2s ease',
+                      textDecorationColor: 'rgba(0,0,0,0.3)',
+                      '&:hover': {
+                        color: 'primary.dark',
+                        textDecorationColor: 'currentColor',
+                      },
+                    }}
+                  >
+                    {t.name}
+                  </Box>
                 </Typography>
               </CardContent>
+              <CardContent>
+                <MemberChips
+                  slugs={rosters[t.slug] ?? []}
+                  playersBySlug={playersBySlug}
+                  emptyText=""
+                />
+              </CardContent>
             </CardActionArea>
-            <CardContent>
-              <MemberChips
-                slugs={rosters[t.slug] ?? []}
-                playersBySlug={playersBySlug}
-                emptyText=""
-              />
-            </CardContent>
           </Card>
         ))}
       </Box>

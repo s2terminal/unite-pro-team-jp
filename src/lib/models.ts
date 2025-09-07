@@ -1,4 +1,4 @@
-import { loadMemberYaml, loadRosterYaml, loadTeamYaml, type MemberYaml, type RosterYaml, type TeamYaml } from './yamlLoader';
+import { loadMemberYaml, loadRosterYaml, loadTeamYaml } from './yamlLoader';
 
 // Types
 export type TeamSlug = string;
@@ -23,7 +23,7 @@ export type RosterChange = {
   date: string; // ISO-like string in YAML
   member: { in?: PlayerSlug[]; out?: PlayerSlug[] };
   reference?: string[];
-};
+}
 
 // YAML型はyamlLoaderからimport
 
@@ -111,7 +111,7 @@ export async function getRosterForTeam(teamSlug: TeamSlug): Promise<{
 }
 
 export async function getCurrentTeamForPlayer(player: PlayerSlug): Promise<TeamSlug | undefined> {
-  const [rosters, teamSlugs] = await Promise.all([getRosters(), getTeamSlugs()]);
+  const teamSlugs = await getTeamSlugs();
   for (const slug of teamSlugs) {
     const { current } = await getRosterForTeam(slug);
     if (current.includes(player)) return slug;

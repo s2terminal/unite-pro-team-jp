@@ -1,0 +1,11 @@
+# Build outputs
+.dist
+/.astro
+/dist
+
+# Node
+/node_modules
+
+# Misc
+/tmp
+

@@ -7,9 +7,11 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "check": "npm run validate && npm run type-check && npm run lint",
+    "check": "npm run validate && npm run type-check && npm run lint && npm run format",
     "validate": "node scripts/validate-data.mjs",
     "type-check": "tsc --noEmit",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
@@ -26,6 +28,8 @@
     "yaml": "^2.8.1"
   },
   "devDependencies": {
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.0",
     "@google/gemini-cli": "^0.1.22",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",

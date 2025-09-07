@@ -49,7 +49,7 @@ export default function TeamList({
               <MemberChips
                 slugs={rosters[t.slug] ?? []}
                 playersBySlug={playersBySlug}
-                emptyText=''
+                emptyText=""
               />
             </CardContent>
           </Card>

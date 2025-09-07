@@ -5,10 +5,21 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import href from '../../lib/url';
 import { AppThemeProvider } from '../layout/AppTheme';
+import MemberChips from '../ui/MemberChips';
 
 type Team = { slug: string; name: string; memo?: string };
+type RostersByTeam = Record<string, string[]>; // teamSlug -> current member slugs
+type PlayersBySlug = Record<string, { name?: string } | undefined>;
 
-export default function TeamList({ teams }: { teams: Team[] }) {
+export default function TeamList({
+  teams,
+  rosters,
+  playersBySlug,
+}: {
+  teams: Team[];
+  rosters: RostersByTeam;
+  playersBySlug: PlayersBySlug;
+}) {
   return (
     <AppThemeProvider>
       <p>日本のポケモンユナイトプロチームの情報をまとめています。</p>
@@ -34,6 +45,13 @@ export default function TeamList({ teams }: { teams: Team[] }) {
                 </Typography>
               </CardContent>
             </CardActionArea>
+            <CardContent>
+              <MemberChips
+                slugs={rosters[t.slug] ?? []}
+                playersBySlug={playersBySlug}
+                emptyText=''
+              />
+            </CardContent>
           </Card>
         ))}
       </Box>

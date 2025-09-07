@@ -2,11 +2,11 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import Link from '@mui/material/Link';
 import href from '../../lib/url';
 import { AppThemeProvider } from '../layout/AppTheme';
+import MemberChips from '../ui/MemberChips';
 
 type Team = { slug: string; name: string; alias?: string[]; memo?: string; reference?: string[] };
 type Player = { slug: string; name: string };
@@ -62,22 +62,7 @@ export default function TeamDetail({
             <Typography variant="h6" gutterBottom>
               現在のメンバー
             </Typography>
-            {current.length ? (
-              <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
-                {current.map((pslug) => (
-                  <Chip
-                    key={pslug}
-                    clickable
-                    component="a"
-                    href={href(['player', pslug])}
-                    label={playersBySlug[pslug]?.name ?? pslug}
-                    color="secondary"
-                  />
-                ))}
-              </Stack>
-            ) : (
-              <Typography color="text.secondary">メンバー情報がありません。</Typography>
-            )}
+            <MemberChips slugs={current} playersBySlug={playersBySlug} />
           </CardContent>
         </Card>
 

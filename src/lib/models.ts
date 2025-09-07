@@ -1,5 +1,4 @@
-import fs from 'node:fs/promises';
-import { parse } from 'yaml';
+import { loadMemberYaml, loadRosterYaml, loadTeamYaml, type MemberYaml, type RosterYaml, type TeamYaml } from './yamlLoader';
 
 // Types
 export type TeamSlug = string;
@@ -26,39 +25,10 @@ export type RosterChange = {
   reference?: string[];
 };
 
-type TeamYaml = Record<string, {
-  name: string;
-  alias?: string[];
-  reference?: string[];
-  memo?: string;
-}>;
-
-type MemberYaml = {
-  player: Record<string, {
-    name: string;
-    alias?: string[];
-    reference?: string[];
-  }>;
-};
-
-type RosterYaml = Record<string, RosterChange[]>;
-
-async function readYaml(relativePathFromThisFile: string) {
-  const url = new URL(relativePathFromThisFile, import.meta.url);
-  const raw = await fs.readFile(url, 'utf-8');
-  return parse(raw);
-}
-
-// Cache to avoid re-reading during a build
-let cache: {
-  teams?: Team[];
-  players?: Player[];
-  rosters?: Map<TeamSlug, RosterChange[]>;
-} = {};
+// YAML型はyamlLoaderからimport
 
 export async function getTeams(): Promise<Team[]> {
-  if (cache.teams) return cache.teams;
-  const data = await readYaml('../../data/team.yaml') as TeamYaml;
+  const data = await loadTeamYaml();
   const teams: Team[] = Object.entries(data).map(([slug, t]) => ({
     slug,
     name: t.name ?? slug,
@@ -66,7 +36,6 @@ export async function getTeams(): Promise<Team[]> {
     reference: t.reference,
     memo: t.memo,
   }));
-  cache.teams = teams;
   return teams;
 }
 
@@ -81,15 +50,13 @@ export async function getTeamBySlug(slug: TeamSlug): Promise<Team | undefined> {
 }
 
 export async function getPlayers(): Promise<Player[]> {
-  if (cache.players) return cache.players;
-  const data = await readYaml('../../data/member.yaml') as MemberYaml;
+  const data = await loadMemberYaml();
   const players: Player[] = Object.entries(data.player ?? {}).map(([slug, p]) => ({
     slug,
     name: p.name ?? slug,
     alias: p.alias,
     reference: p.reference,
   }));
-  cache.players = players;
   return players;
 }
 
@@ -116,14 +83,12 @@ export async function getPlayerBySlug(slug: PlayerSlug): Promise<Player | undefi
 }
 
 export async function getRosters(): Promise<Map<TeamSlug, RosterChange[]>> {
-  if (cache.rosters) return cache.rosters;
-  const data = await readYaml('../../data/roster.yaml') as RosterYaml;
+  const data = await loadRosterYaml();
   const map = new Map<TeamSlug, RosterChange[]>();
   for (const [teamSlug, changes] of Object.entries(data)) {
     const sorted = [...(changes ?? [])].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
     map.set(teamSlug, sorted);
   }
-  cache.rosters = map;
   return map;
 }
 

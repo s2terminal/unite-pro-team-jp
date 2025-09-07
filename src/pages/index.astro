@@ -7,9 +7,5 @@ const teams = await getTeams();
 ---
 
 <Layout>
-  <main style="max-width: 1100px; margin: 0 auto; padding: 24px;">
-    <p>日本のポケモンユナイトプロチームの情報をまとめています。</p>
-    <h1 style="margin-bottom: 12px;">チーム一覧</h1>
-    <TeamList client:visible teams={teams} />
-  </main>
+  <TeamList client:visible teams={teams} />
 </Layout>

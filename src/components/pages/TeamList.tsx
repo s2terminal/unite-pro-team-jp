@@ -11,6 +11,8 @@ type Team = { slug: string; name: string; memo?: string };
 export default function TeamList({ teams }: { teams: Team[] }) {
   return (
     <AppThemeProvider>
+      <p>日本のポケモンユナイトプロチームの情報をまとめています。</p>
+      <h1>チーム一覧</h1>
       <Box
         sx={{
           display: 'grid',

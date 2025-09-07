@@ -23,13 +23,11 @@ const history = await getPlayerHistory(slug!);
 ---
 
 <Layout>
-  <main style="max-width: 1100px; margin: 0 auto; padding: 24px;">
-    <PlayerDetail
-      client:visible
-      player={player ?? { slug, name: slug }}
-      currentTeam={currentTeamSlug}
-      history={history}
-      teamBySlug={Object.fromEntries(teamBySlug)}
-    />
-  </main>
+  <PlayerDetail
+    client:visible
+    player={player ?? { slug, name: slug }}
+    currentTeam={currentTeamSlug}
+    history={history}
+    teamBySlug={Object.fromEntries(teamBySlug)}
+  />
 </Layout>

@@ -17,13 +17,11 @@ const playersBySlug = new Map(players.map((p) => [p.slug, p]));
 ---
 
 <Layout>
-  <main style="max-width: 1100px; margin: 0 auto; padding: 24px;">
-    <TeamDetail
-      client:visible
-      team={team}
-      current={roster.current}
-      history={roster.history}
-      playersBySlug={Object.fromEntries(playersBySlug)}
-    />
-  </main>
+  <TeamDetail
+    client:visible
+    team={team}
+    current={roster.current}
+    history={roster.history}
+    playersBySlug={Object.fromEntries(playersBySlug)}
+  />
 </Layout>

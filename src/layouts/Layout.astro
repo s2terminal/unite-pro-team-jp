@@ -17,7 +17,9 @@ import href from '../lib/url';
   <body>
     <Header client:load />
     <div class="content-container">
-      <slot />
+      <main class="main">
+        <slot />
+      </main>
     </div>
     <Footer client:load />
   </body>
@@ -43,5 +45,11 @@ import href from '../lib/url';
   .content-container {
     flex: 1 0 auto;
     background-color: #ffffff;
+  }
+
+  .main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px;
   }
 </style>

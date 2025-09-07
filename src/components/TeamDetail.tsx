@@ -6,6 +6,7 @@ import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import Link from '@mui/material/Link';
 import href from '../lib/url';
+import { AppThemeProvider } from './AppTheme';
 
 type Team = { slug: string; name: string; alias?: string[]; memo?: string; reference?: string[] };
 type Player = { slug: string; name: string };
@@ -27,6 +28,7 @@ export default function TeamDetail({
   playersBySlug: Record<string, Player>;
 }) {
   return (
+    <AppThemeProvider>
     <Box sx={{ display: 'grid', gap: 2 }}>
       <Card>
         <CardContent>
@@ -69,6 +71,7 @@ export default function TeamDetail({
                   component="a"
                   href={href(['player', pslug])}
                   label={playersBySlug[pslug]?.name ?? pslug}
+                  color="secondary"
                 />
               ))}
             </Stack>
@@ -140,5 +143,6 @@ export default function TeamDetail({
         </CardContent>
       </Card>
     </Box>
+    </AppThemeProvider>
   );
 }

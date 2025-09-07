@@ -4,12 +4,14 @@ import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import href from '../lib/url';
+import { AppThemeProvider } from './AppTheme';
 
 type Team = { slug: string; name: string; memo?: string };
 
 export default function TeamList({ teams }: { teams: Team[] }) {
   return (
-    <Box
+    <AppThemeProvider>
+      <Box
       sx={{
         display: 'grid',
         gridTemplateColumns: {
@@ -33,5 +35,6 @@ export default function TeamList({ teams }: { teams: Team[] }) {
         </Card>
       ))}
     </Box>
+    </AppThemeProvider>
   );
 }

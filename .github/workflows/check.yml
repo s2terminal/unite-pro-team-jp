@@ -1,9 +1,9 @@
-name: data/の検証
+name: コードとデータのチェック
 permissions:
   contents: read
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  group: "${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}"
   cancel-in-progress: true
 
 on:
@@ -13,22 +13,30 @@ on:
     paths:
       - 'data/**'
       - 'scripts/**'
+      - 'src/**'
       - 'package.json'
       - 'package-lock.json'
-      - '.github/workflows/validate.yml'
+      - '.github/workflows/check.yml'
+      - 'tsconfig.json'
+      - 'eslint.config.js'
+      - '.prettierrc'
   pull_request:
     branches:
       - main
     paths:
       - 'data/**'
       - 'scripts/**'
+      - 'src/**'
       - 'package.json'
       - 'package-lock.json'
-      - '.github/workflows/validate.yml'
+      - '.github/workflows/check.yml'
+      - 'tsconfig.json'
+      - 'eslint.config.js'
+      - '.prettierrc'
   workflow_dispatch:
 
 jobs:
-  validate:
+  check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -48,5 +56,14 @@ jobs:
             npm install
           fi
 
-      - name: validation実行
+      - name: Prettier (format) チェック
+        run: npm run -s format
+
+      - name: ESLint (lint) チェック
+        run: npm run -s lint
+
+      - name: TypeScript 型チェック
+        run: npm run -s type-check
+
+      - name: データスキーマ validation
         run: npm run -s validate

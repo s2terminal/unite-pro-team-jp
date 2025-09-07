@@ -2,17 +2,19 @@
     <title>Unite Pro Teams JP</title>
         <defs>
             <style>
-                /* Purple U + Orange dot */
-                .u { fill: none; stroke: #6a1b9a; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+                /* Purple U + Orange dot with white halo for visibility */
+                .u-bg { fill: none; stroke: #ffffff; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+                .u { fill: none; stroke: #7e57c2; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+                .dot-bg { fill: #ffffff; }
                 .dot { fill: #fb8c00; }
-                @media (prefers-color-scheme: dark) {
-                    .u { stroke: #b39ddb; }
-                    .dot { fill: #ffcc80; }
-                }
             </style>
         </defs>
-    <!-- Stylized "U" to represent Unite; colors follow MUI default palette. -->
+    <!-- Stylized "U" to represent Unite; colors follow MUI default palette (primary: deepPurple[500], secondary: orange[600]). -->
+    <!-- White halo underlay -->
+    <path class="u-bg" d="M18 12v24a14 14 0 0 0 14 14a14 14 0 0 0 14-14V12" shape-rendering="geometricPrecision"/>
+    <!-- Main stroke -->
     <path class="u" d="M18 12v24a14 14 0 0 0 14 14a14 14 0 0 0 14-14V12" shape-rendering="geometricPrecision"/>
-    <!-- Small red circle as a subtle JP motif inside the U bowl. -->
-        <circle class="dot" cx="32" cy="40" r="10"/>
+    <!-- Small orange circle as a subtle JP motif inside the U bowl. -->
+    <circle class="dot-bg" cx="32" cy="40" r="12"/>
+    <circle class="dot" cx="32" cy="40" r="10"/>
 </svg>

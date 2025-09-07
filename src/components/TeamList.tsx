@@ -12,29 +12,29 @@ export default function TeamList({ teams }: { teams: Team[] }) {
   return (
     <AppThemeProvider>
       <Box
-      sx={{
-        display: 'grid',
-        gridTemplateColumns: {
-          xs: '1fr',
-          sm: '1fr 1fr',
-          md: '1fr 1fr 1fr',
-        },
-        gap: 2,
-        mt: 1,
-      }}
-    >
-      {teams.map((t) => (
-        <Card key={t.slug} variant="outlined">
-          <CardActionArea href={href(['team', t.slug])}>
-            <CardContent>
-              <Typography variant="h6" component="div">
-                {t.name}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-      ))}
-    </Box>
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: {
+            xs: '1fr',
+            sm: '1fr 1fr',
+            md: '1fr 1fr 1fr',
+          },
+          gap: 2,
+          mt: 1,
+        }}
+      >
+        {teams.map((t) => (
+          <Card key={t.slug} variant="outlined">
+            <CardActionArea href={href(['team', t.slug])}>
+              <CardContent>
+                <Typography variant="h6" component="div">
+                  {t.name}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        ))}
+      </Box>
     </AppThemeProvider>
   );
 }

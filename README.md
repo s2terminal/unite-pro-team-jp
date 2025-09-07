@@ -11,5 +11,5 @@ $ npm run preview
 ## データチェック
 
 ```
-$ npm run validate
+$ npm run check
 ```

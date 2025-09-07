@@ -7,7 +7,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "validate": "node scripts/validate-data.mjs"
+    "validate": "node scripts/validate-data.mjs",
+    "type-check": "tsc --noEmit",
+    "check": "npm run validate && npm run type-check"
   },
   "dependencies": {
     "@astrojs/react": "^4.3.0",

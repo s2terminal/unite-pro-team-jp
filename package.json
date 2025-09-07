@@ -7,6 +7,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "sync": "astro sync",
     "check": "npm run validate && npm run type-check && npm run lint && npm run format",
     "validate": "node scripts/validate-data.mjs",
     "type-check": "tsc --noEmit",
@@ -28,6 +29,7 @@
     "yaml": "^2.8.1"
   },
   "devDependencies": {
+    "typescript": "^5.6.3",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.0",
     "@google/gemini-cli": "^0.1.22",

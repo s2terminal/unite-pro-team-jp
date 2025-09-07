@@ -62,6 +62,9 @@ jobs:
       - name: ESLint (lint) チェック
         run: npm run -s lint
 
+      - name: Astro types sync
+        run: npm run -s sync
+
       - name: TypeScript 型チェック
         run: npm run -s type-check
 

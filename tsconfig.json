@@ -1,10 +1,11 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"],
   "compilerOptions": {
-    "strict": true,
+    // React を使用するための設定
     "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    "jsxImportSource": "react",
+
+    // 依存の .d.ts 内の型エラーを無視（ビルド速度と互換性のため）
+    "skipLibCheck": true
   }
 }

@@ -60,8 +60,8 @@ export async function getPlayers(): Promise<Player[]> {
   return players;
 }
 
-export async function getPlayerSlugs(): Promise<PlayerSlug[]> {
-  // Union of players defined in member.yaml and players appearing in any roster
+async function getPlayerSlugs(): Promise<PlayerSlug[]> {
+  // member.yamlに定義されているplayerと、roster.yamlに登場するplayerの和集合
   const [players, rosters] = await Promise.all([getPlayers(), getRosters()]);
   const set = new Set<PlayerSlug>(players.map(p => p.slug));
   for (const changes of rosters.values()) {

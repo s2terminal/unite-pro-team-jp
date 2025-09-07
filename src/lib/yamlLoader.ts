@@ -6,8 +6,8 @@ const TEAM_YAML_PATH = '../../data/team.yaml';
 const MEMBER_YAML_PATH = '../../data/member.yaml';
 const ROSTER_YAML_PATH = '../../data/roster.yaml';
 
-// キャッシュ有効化フラグ（デフォルト: 有効）
-const CACHE_ENABLED = true;
+// キャッシュ有効化フラグ ※リロードで反映されなくなる
+const CACHE_ENABLED = false;
 
 // YAMLファイル読み込みユーティリティ
 // dataファイルからの相対パスを受け取り、パース結果を返す

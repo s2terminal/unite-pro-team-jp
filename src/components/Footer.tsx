@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import { AppThemeProvider } from './AppTheme';
+import LogoIcon from './LogoIcon';
 
 export default function Footer() {
   return (
@@ -23,6 +24,7 @@ export default function Footer() {
       >
         <Toolbar sx={{ justifyContent: 'center' }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexWrap: 'wrap' }}>
+            <LogoIcon size={18} />
             <Typography variant="body2" color="text.secondary">
               © {new Date().getFullYear()} Unite Pro Teams JP
             </Typography>

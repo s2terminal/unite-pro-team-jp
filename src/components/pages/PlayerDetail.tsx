@@ -3,8 +3,8 @@ import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Link from '@mui/material/Link';
-import href from '../lib/url';
-import { AppThemeProvider } from './AppTheme';
+import href from '../../lib/url';
+import { AppThemeProvider } from '../layout/AppTheme';
 
 type Team = { slug: string; name: string };
 type Player = { slug: string; name: string; alias?: string[]; reference?: string[] };

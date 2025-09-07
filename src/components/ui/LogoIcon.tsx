@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import type { SxProps, Theme } from '@mui/material/styles';
-import href from '../lib/url';
+import href from '../../lib/url';
 
 type Props = {
   size?: number | string;

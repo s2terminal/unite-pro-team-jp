@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getTeamSlugs, getTeamBySlug, getRosterForTeam, getPlayers } from '../../lib/models';
-import TeamDetail from '../../components/TeamDetail';
+import TeamDetail from '../../components/pages/TeamDetail';
 
 export async function getStaticPaths() {
   const slugs = await getTeamSlugs();

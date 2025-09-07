@@ -3,9 +3,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
-import href from '../lib/url';
+import href from '../../lib/url';
 import { AppThemeProvider } from './AppTheme';
-import LogoIcon from './LogoIcon';
+import LogoIcon from '../ui/LogoIcon';
 
 export default function Header() {
   return (

@@ -3,8 +3,8 @@ import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import href from '../lib/url';
-import { AppThemeProvider } from './AppTheme';
+import href from '../../lib/url';
+import { AppThemeProvider } from '../layout/AppTheme';
 
 type Team = { slug: string; name: string; memo?: string };
 

@@ -5,8 +5,8 @@ import CardContent from '@mui/material/CardContent';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import Link from '@mui/material/Link';
-import href from '../lib/url';
-import { AppThemeProvider } from './AppTheme';
+import href from '../../lib/url';
+import { AppThemeProvider } from '../layout/AppTheme';
 
 type Team = { slug: string; name: string; alias?: string[]; memo?: string; reference?: string[] };
 type Player = { slug: string; name: string };

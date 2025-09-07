@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import { AppThemeProvider } from './AppTheme';
-import LogoIcon from './LogoIcon';
+import LogoIcon from '../ui/LogoIcon';
 
 export default function Footer() {
   return (

@@ -9,6 +9,7 @@
     "astro": "astro",
     "sync": "astro sync",
     "check": "npm run validate && npm run type-check && npm run lint && npm run format",
+    "fix": "npm run lint:fix && npm run format:fix",
     "validate": "node scripts/validate-data.mjs",
     "type-check": "tsc --noEmit",
     "format": "prettier --check .",

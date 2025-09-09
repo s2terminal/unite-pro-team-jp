@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Meta from '../../components/Meta.astro';
 import { getTeamSlugs, getTeamBySlug, getRosterForTeam, getPlayers } from '../../lib/models';
 import TeamDetail from '../../components/pages/TeamDetail';
 
@@ -17,6 +18,9 @@ const playersBySlug = new Map(players.map((p) => [p.slug, p]));
 ---
 
 <Layout>
+  <Fragment slot="head">
+    <Meta title={`${team?.name ?? slug} | チーム情報`} type="article" />
+  </Fragment>
   <TeamDetail
     client:visible
     team={team}

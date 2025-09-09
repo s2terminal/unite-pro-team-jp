@@ -1,0 +1,59 @@
+---
+import { buildMeta, type MetaParams } from '../lib/meta';
+import href from '../lib/url';
+
+type Props = Omit<MetaParams, 'image' | 'url'> & {
+  image?: string;
+  // Canonical URL; デフォルトは現在のページのURL
+  url?: string;
+};
+
+const {
+  title,
+  description,
+  type = 'website',
+  noindex = false,
+  siteName,
+  locale = 'ja_JP',
+  image,
+  url,
+} = Astro.props as Props;
+
+// Resolve canonical URL (absolute)
+const canonical = url ?? Astro.url?.href ?? '';
+
+// Resolve OGP image absolute URL
+const imagePath = image ?? 'ogp.png';
+const imageAbs = new URL(href(imagePath, { trailingSlash: false }), Astro.site ?? Astro.url).href;
+
+const m = buildMeta({
+  title,
+  description,
+  type,
+  noindex,
+  siteName,
+  locale,
+  image: imageAbs,
+  url: canonical,
+});
+---
+
+<>
+  <title>{`${m.title} | ${m.siteName}`}</title>
+  <link rel="canonical" href={m.url} />
+  <meta name="description" content={m.description} />
+  <meta name="robots" content={m.noindex ? 'noindex, nofollow' : 'index, follow'} />
+
+  <meta property="og:title" content={`${m.title} | ${m.siteName}`} />
+  <meta property="og:description" content={m.description} />
+  <meta property="og:type" content={m.type} />
+  <meta property="og:url" content={m.url} />
+  <meta property="og:site_name" content={m.siteName} />
+  <meta property="og:locale" content={m.locale} />
+  <meta property="og:image" content={m.image} />
+
+  <meta name="twitter:card" content={m.twitterCard} />
+  <meta name="twitter:title" content={`${m.title} | ${m.siteName}`} />
+  <meta name="twitter:description" content={m.description} />
+  <meta name="twitter:image" content={m.image} />
+</>

@@ -185,11 +185,94 @@ async function runCrossValidation(loaded) {
       console.error(errors.join('\n'));
       return false;
     } else {
-      console.log('✅ ファイル横断の参照は一貫しています。');
+      console.log('✅ roster のキーと member スラグ参照は一貫しています。');
       return true;
     }
   } catch (e) {
     console.error('\n❌ ファイル横断の検証でエラーが発生しました:', e);
+    return false;
+  }
+}
+
+// ---------------------------------------------
+// 追加: ロスターの時系列検証
+// ---------------------------------------------
+// TODO: model.tsと共通化できそう
+/**
+ * 各チームごとにロスター変更を日付順（同日なら記述順）に適用し、
+ * その時点で在籍していない選手が out された場合にエラーを返す。
+ * @param {any} rosterJson
+ * @returns {string[]} エラーメッセージの配列
+ */
+function crossValidateRosterTimeline(rosterJson) {
+  /** @type {string[]} */
+  const errors = [];
+  if (!rosterJson || typeof rosterJson !== 'object') return errors;
+
+  for (const [teamKey, changes] of Object.entries(rosterJson)) {
+    if (!Array.isArray(changes)) continue;
+
+    // 同日内は定義順を優先しつつ、日付で昇順ソート
+    const entries = changes
+      .map((entry, idx) => ({ ...entry, __idx: idx }))
+      .sort((a, b) => {
+        const ad = String(a.date || '');
+        const bd = String(b.date || '');
+        const cmp = ad.localeCompare(bd);
+        return cmp !== 0 ? cmp : a.__idx - b.__idx;
+      });
+
+    /** @type {Set<string>} 現在在籍しているメンバー */
+    const current = new Set();
+
+    for (const e of entries) {
+      const date = e.date || '(no-date)';
+      const idx = e.__idx;
+      const member = (e && e.member) || {};
+      const outArr = Array.isArray(member.out) ? member.out : [];
+      const inArr = Array.isArray(member.in) ? member.in : [];
+
+      // まず out の妥当性をチェック（このイベント時点の current を基準）
+      for (const slug of outArr) {
+        if (!current.has(slug)) {
+          errors.push(
+            `(roster).${teamKey}[${idx}] ${date}: out '${slug}' は当時の在籍メンバーに存在しません`
+          );
+        }
+      }
+
+      // out を適用（在籍していれば削除）
+      for (const slug of outArr) {
+        if (current.has(slug)) current.delete(slug);
+      }
+
+      // in を適用
+      for (const slug of inArr) {
+        current.add(slug);
+      }
+    }
+  }
+
+  return errors;
+}
+
+/**
+ * ロスター時系列検証を実行し、結果をログして bool を返す。
+ * @param {LoadedBundle} loaded
+ */
+async function runRosterTimelineValidation(loaded) {
+  try {
+    const timelineErrors = crossValidateRosterTimeline(loaded.data.roster);
+    if (timelineErrors.length > 0) {
+      console.error(`\n❌ 時系列のロスター検証に失敗しました（在籍していない選手の out を検出）`);
+      console.error(timelineErrors.join('\n'));
+      return false;
+    } else {
+      console.log('✅ ロスターの時系列整合は問題ありません。');
+      return true;
+    }
+  } catch (e) {
+    console.error('\n❌ ロスターの時系列検証でエラーが発生しました:', e);
     return false;
   }
 }
@@ -201,7 +284,8 @@ async function main() {
   const loaded = await loadAll();
   const schemaOk = await validateAllSchemas(loaded);
   const crossOk = await runCrossValidation(loaded);
-  if (!schemaOk || !crossOk) {
+  const timelineOk = await runRosterTimelineValidation(loaded);
+  if (!schemaOk || !crossOk || !timelineOk) {
     process.exit(1);
   } else {
     console.log('\nすべてのデータファイルは有効です。');

@@ -12,16 +12,20 @@ function isExternal(url: string): boolean {
 
 function joinPath(...parts: string[]): string {
   // 先頭と末尾のスラッシュを調整して結合
+  // ポイント:
+  // - 先頭要素(BASE_URLなど)の「末尾スラッシュ」は除去しておく（結合時の // 防止）
+  // - 2番目以降は両端のスラッシュを除去
+  // - 空要素は弾く
+  // - 最終的に先頭スラッシュを必ず1つ付与
   const cleaned = parts
     .filter(Boolean)
     .map((p, i) => {
-      // BASE_URLはAstroが末尾スラッシュ保証だが、念のため正規化
-      if (i === 0) return p.replace(/\/+$/g, '/');
-      return p.replace(/^\/+|\/+$/g, '');
+      if (i === 0) return p.replace(/\/+$/g, ''); // 末尾スラッシュを除去
+      return p.replace(/^\/+|\/+$/g, ''); // 両端を除去
     })
+    .filter((p) => p.length > 0)
     .join('/');
-  // 先頭は必ず1つのスラッシュに
-  return cleaned.replace(/^\/+/, '/');
+  return '/' + cleaned.replace(/^\/+/, '');
 }
 
 function ensureDirSlash(path: string): string {

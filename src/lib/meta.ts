@@ -1,3 +1,4 @@
+// TODO: このファイル無くしてMeta.astroに統合した方がよさそう
 export type MetaParams = {
   siteName?: string;
   title?: string;
@@ -7,6 +8,7 @@ export type MetaParams = {
   type?: 'website' | 'article' | string;
   noindex?: boolean;
   locale?: string; // e.g., ja_JP
+  card?: 'summary_large_image' | 'summary';
 };
 
 export function buildMeta({
@@ -18,8 +20,8 @@ export function buildMeta({
   type = 'website',
   noindex = false,
   locale = 'ja_JP',
+  card = 'summary',
 }: MetaParams) {
-  const card = image ? 'summary_large_image' : 'summary';
   return {
     siteName,
     title,

@@ -2,19 +2,14 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import Stack from '@mui/material/Stack';
 import Link from '@mui/material/Link';
-import href from '../../lib/url';
 import { AppThemeProvider } from '../layout/AppTheme';
 import MemberChips from '../ui/MemberChips';
+import RosterHistory, { type RosterChange } from '../ui/RosterHistory';
 
 type Team = { slug: string; name: string; alias?: string[]; memo?: string; reference?: string[] };
 type Player = { slug: string; name: string };
-type RosterChange = {
-  date: string;
-  member: { in?: string[]; out?: string[] };
-  reference?: string[];
-};
+// RosterChange 型は RosterHistory から再利用
 
 export default function TeamDetail({
   team,
@@ -71,60 +66,7 @@ export default function TeamDetail({
             <Typography variant="h6" gutterBottom>
               ロスター履歴
             </Typography>
-            {history.length ? (
-              <Stack spacing={1}>
-                {history.map((h, idx) => (
-                  <Box key={idx}>
-                    <Typography component="span" sx={{ fontWeight: 600 }}>
-                      {h.date}:
-                    </Typography>{' '}
-                    {!!h.member.in?.length && (
-                      <Typography component="span">
-                        加入:{' '}
-                        {h.member.in.map((s, i) => (
-                          <span key={`in-span-${s}`}>
-                            <Link href={href(['player', s])}>{playersBySlug[s]?.name ?? s}</Link>
-                            {i < (h.member.in?.length ?? 0) - 1 ? ', ' : ''}
-                          </span>
-                        ))}
-                      </Typography>
-                    )}
-                    {!!h.member.out?.length && (
-                      <Typography component="span">
-                        {' '}
-                        離脱:{' '}
-                        {h.member.out.map((s, i) => (
-                          <span key={`out-span-${s}`}>
-                            <Link href={href(['player', s])}>{playersBySlug[s]?.name ?? s}</Link>
-                            {i < (h.member.out?.length ?? 0) - 1 ? ', ' : ''}
-                          </span>
-                        ))}
-                      </Typography>
-                    )}
-                    {!!h.reference?.length && (
-                      <Typography component="span" color="text.secondary">
-                        {' '}
-                        [
-                        {(h.reference ?? []).map((r, i) => (
-                          <span key={`ref-span-${r}`}>
-                            <Link
-                              href={r}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              sx={{ mr: 0.5 }}
-                            >{`参考${i + 1}`}</Link>
-                            {i < (h.reference?.length ?? 0) - 1 ? ' ' : ''}
-                          </span>
-                        ))}
-                        ]
-                      </Typography>
-                    )}
-                  </Box>
-                ))}
-              </Stack>
-            ) : (
-              <Typography color="text.secondary">履歴がありません。</Typography>
-            )}
+            <RosterHistory history={history} playersBySlug={playersBySlug} />
           </CardContent>
         </Card>
       </Box>

@@ -1,3 +1,4 @@
+import React from 'react';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
@@ -14,9 +15,11 @@ export type RosterChange = {
 export default function RosterHistory({
   history,
   playersBySlug,
+  renderPrefix,
 }: {
   history: RosterChange[];
   playersBySlug: Record<string, Player>;
+  renderPrefix?: (c: RosterChange, index: number) => React.ReactNode;
 }) {
   if (!history.length) {
     return <Typography color="text.secondary">履歴がありません。</Typography>;
@@ -47,6 +50,7 @@ export default function RosterHistory({
               {h.date}
             </Box>
             <Box component="span" sx={{ fontSize: 14, lineHeight: 1.6 }}>
+              {renderPrefix && <>{renderPrefix(h, idx)} </>}
               {hasIn && (
                 <>
                   <strong>加入:</strong>{' '}
@@ -71,7 +75,12 @@ export default function RosterHistory({
                 </>
               )}
               {!!h.reference?.length && (
-                <Typography component="span" color="text.secondary" sx={{ ml: 0.5 }}>
+                <Typography
+                  component="span"
+                  color="text.secondary"
+                  variant="body2"
+                  sx={{ ml: 0.5 }}
+                >
                   [
                   {(h.reference ?? []).map((r, i) => (
                     <span key={`ref-span-${r}`}>

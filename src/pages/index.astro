@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Meta from '../layouts/Meta.astro';
 import { getTeams, getRosters, getPlayers } from '../lib/models';
 import TeamList from '../components/pages/TeamList';
+import RecentRosterCard from '../components/ui/RecentRosterCard';
 
 const teams = await getTeams();
 const [rosterMap, players] = await Promise.all([getRosters(), getPlayers()]);
@@ -19,11 +20,34 @@ const rosters = Object.fromEntries(
     .map(([slug, set]) => [slug, [...set]])
 );
 const playersBySlug = Object.fromEntries(players.map((p) => [p.slug, p]));
+
+// 最近のロスター変更 (全チームから直近の日付順で最大20件程度)
+const flattened = [] as {
+  date: string;
+  team: (typeof teams)[number];
+  ins: string[];
+  outs: string[];
+  references?: string[];
+}[];
+for (const team of teams) {
+  const history = rosterMap.get(team.slug) ?? [];
+  for (const h of history) {
+    const ins = h.member?.in ?? [];
+    const outs = h.member?.out ?? [];
+    if (ins.length === 0 && outs.length === 0) continue;
+    flattened.push({ date: h.date, team, ins, outs, references: h.reference });
+  }
+}
+flattened.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+const recentChanges = flattened.slice(0, 20);
 ---
 
 <Layout>
   <Fragment slot="head">
-    <Meta title="チーム一覧" />
+    <Meta />
   </Fragment>
   <TeamList client:visible teams={teams} rosters={rosters} playersBySlug={playersBySlug} />
+  <div style="margin-top: 2.5rem;">
+    <RecentRosterCard client:visible items={recentChanges} playersBySlug={playersBySlug} />
+  </div>
 </Layout>

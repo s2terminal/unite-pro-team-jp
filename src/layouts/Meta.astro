@@ -33,7 +33,7 @@ const imagePath = image ?? 'ogp.png';
 const imageAbs = new URL(href(imagePath, { trailingSlash: false }), Astro.site ?? Astro.url).href;
 
 const resolvedSiteName = siteName ?? 'Unite Pro Team JP';
-const resolvedTitle = title ?? resolvedSiteName;
+const resolvedTitle = title ? `${title} | ${resolvedSiteName}` : resolvedSiteName;
 const resolvedDescription =
   description ?? '日本のポケモンユナイトプロチームの情報をまとめています。';
 const resolvedType = type ?? 'website';
@@ -43,12 +43,12 @@ const resolvedTwitterCard = (Astro.props as Props).card ?? 'summary';
 ---
 
 <>
-  <title>{`${resolvedTitle} | ${resolvedSiteName}`}</title>
+  <title>{resolvedTitle}</title>
   <link rel="canonical" href={canonical} />
   <meta name="description" content={resolvedDescription} />
   <meta name="robots" content={resolvedNoindex ? 'noindex, nofollow' : 'index, follow'} />
 
-  <meta property="og:title" content={`${resolvedTitle} | ${resolvedSiteName}`} />
+  <meta property="og:title" content={resolvedTitle} />
   <meta property="og:description" content={resolvedDescription} />
   <meta property="og:type" content={resolvedType} />
   <meta property="og:url" content={canonical} />
@@ -57,7 +57,7 @@ const resolvedTwitterCard = (Astro.props as Props).card ?? 'summary';
   <meta property="og:image" content={imageAbs} />
 
   <meta name="twitter:card" content={resolvedTwitterCard} />
-  <meta name="twitter:title" content={`${resolvedTitle} | ${resolvedSiteName}`} />
+  <meta name="twitter:title" content={resolvedTitle} />
   <meta name="twitter:description" content={resolvedDescription} />
   <meta name="twitter:image" content={imageAbs} />
 </>

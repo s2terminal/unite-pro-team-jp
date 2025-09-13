@@ -3,13 +3,18 @@
 ## 起動
 
 ```
-$ npm run build
+$ npm install
 $ npm run dev
-$ npm run preview
 ```
 
-## データチェック
+## チェック
 
 ```
 $ npm run check
+```
+
+### データチェック
+
+```
+$ npm run validate
 ```

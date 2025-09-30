@@ -70,6 +70,36 @@ axiz:
     reference:
       - https://x.com/AXIZ_gg/status/1951206266812162161
     date: 2025-08-01
+arneb:
+  - member:
+      in:
+        - mrn
+        - piwai
+        - tabi
+        - siesta
+        - lime
+        - osera
+        - ccx
+    reference:
+      - https://legame-gaming.com/news/388/
+    date: 2025-03-01
+  - member:
+      out:
+        - osera
+    reference:
+      - https://x.com/arneb_official/status/1900487070050591125
+    date: 2025-03-14
+  - member:
+      out:
+        - mrn
+        - piwai
+        - tabi
+        - siesta
+        - lime
+        - ccx
+    reference:
+      - https://x.com/arneb_official/status/1972496553475506635
+    date: 2025-09-29
 insomnia:
   - member:
       in:

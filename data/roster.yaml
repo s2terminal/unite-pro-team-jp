@@ -298,6 +298,13 @@ fennel:
     reference:
       - https://x.com/FENNEL_official/status/1929825395232169986
     date: 2025-06-03
+  - member:
+      out:
+        - serata
+        - yumenyan
+    reference:
+      - https://x.com/FENNEL_official/status/1972964649508520089
+    date: 2025-09-30
 nagoya-oja:
   - member:
       in:

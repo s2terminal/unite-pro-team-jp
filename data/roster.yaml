@@ -161,6 +161,14 @@ scarz:
     reference:
       - https://www.scarz.net/news/25061902/
     date: 2025-06-19
+  - member:
+      out:
+        - cotora
+        - dorap1n
+    reference:
+      - https://x.com/SCARZ5/status/1972587154946588874
+      - https://scarz.net/news/25092901/
+    date: 2025-09-29
 yoshimoto-gaming:
   - member:
       in:

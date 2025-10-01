@@ -305,6 +305,16 @@ fennel:
     reference:
       - https://x.com/FENNEL_official/status/1972964649508520089
     date: 2025-09-30
+  - member:
+      in:
+        - ak1
+        - b1
+        - mame
+        - setsunai
+    reference:
+      - https://x.com/FENNEL_official/status/1973342136763384224
+    date: 2025-10-01
+    memo: 発表ではMa・sh1oとpyiの継続も記載
 nagoya-oja:
   - member:
       in:

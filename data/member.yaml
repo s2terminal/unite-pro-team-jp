@@ -218,13 +218,17 @@ player:
   katastol:
     name: Katastol
     reference: [https://x.com/katastol_]
+  ak1:
+    name: 亞樹
+    alias: [ak1]
+    reference: [https://x.com/sadako4709]
   lucapo:
     name: Lucapo
     alias: [ルカポー]
     reference: [https://x.com/po_o10xxx]
   mashio:
-    name: Ma・shio
-    alias: [ま・しお]
+    name: Ma・sh1o
+    alias: [ま・しお, Ma・shio]
     reference: [https://x.com/mashimashio3]
   pyi:
     name: pyi
@@ -239,6 +243,10 @@ player:
   serata:
     name: セラータ
     reference: [https://x.com/serata_0227]
+  setsunai:
+    name: せつない
+    alias: [setsunai]
+    reference: [https://x.com/fortune_36]
   panchop:
     name: Panchop
     alias: [ぱんちょっぷ]

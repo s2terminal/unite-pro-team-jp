@@ -244,7 +244,8 @@ player:
     name: セラータ
     reference: [https://x.com/serata_0227]
   setsunai:
-    name: setsunai
+    name: せつない
+    alias: [setsunai]
     reference: [https://x.com/fortune_36]
   panchop:
     name: Panchop

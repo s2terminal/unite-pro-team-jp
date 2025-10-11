@@ -151,6 +151,11 @@ qtdig:
         - omutero
     reference: [https://x.com/QT_DIG/status/1911705998638940342]
     date: 2025-04-14
+  - member:
+      out:
+        - teacher
+    reference: [https://x.com/QT_DIG/status/1976935810680443281]
+    date: 2025-10-11
 reject:
   - member:
       in:

@@ -141,6 +141,10 @@ player:
   kusamusi:
     name: Kusamusi
     reference: [https://x.com/musityanndesu]
+  shaker:
+    name: Shaker
+    alias: [まっくしぇい]
+    reference: [https://x.com/macshake11]
   shiganaki:
     name: Shiganaki
     reference: [https://x.com/yu1re_re]

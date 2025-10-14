@@ -19,14 +19,10 @@ type Player = {
   lastTeamName?: string;
 };
 
-export default function PlayerList({
-  players,
-}: {
-  players: Player[];
-}) {
+export default function PlayerList({ players }: { players: Player[] }) {
   const [searchQuery, setSearchQuery] = useState('');
 
-    // Fuse.jsの設定
+  // Fuse.jsの設定
   const fuse = useMemo(
     () =>
       new Fuse(players, {

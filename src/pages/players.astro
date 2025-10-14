@@ -4,11 +4,7 @@ import Meta from '../layouts/Meta.astro';
 import { getPlayers, getTeams, getRosters } from '../lib/models';
 import PlayerList from '../components/pages/PlayerList';
 
-const [players, teams, rosterMap] = await Promise.all([
-  getPlayers(),
-  getTeams(),
-  getRosters(),
-]);
+const [players, teams, rosterMap] = await Promise.all([getPlayers(), getTeams(), getRosters()]);
 
 // チーム名のマップを作成
 const teamsBySlug = Object.fromEntries(teams.map((t) => [t.slug, t]));
@@ -68,10 +64,7 @@ playersWithTeam.sort((a, b) => a.name.localeCompare(b.name, 'ja'));
 
 <Layout>
   <Fragment slot="head">
-    <Meta
-      title="プレイヤー一覧"
-      description="ポケモンユナイトのプロプレイヤー一覧"
-    />
+    <Meta title="プレイヤー一覧" description="ポケモンユナイトのプロプレイヤー一覧" />
   </Fragment>
   <PlayerList client:visible players={playersWithTeam} />
 </Layout>

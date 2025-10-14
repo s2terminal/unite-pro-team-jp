@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Meta from '../layouts/Meta.astro';
+import { getPlayers, getTeams, getRosters } from '../lib/models';
+import PlayerList from '../components/pages/PlayerList';
+
+const [players, teams, rosterMap] = await Promise.all([
+  getPlayers(),
+  getTeams(),
+  getRosters(),
+]);
+
+// チーム名のマップを作成
+const teamsBySlug = Object.fromEntries(teams.map((t) => [t.slug, t]));
+
+// 各プレイヤーの現在の所属チームと最後の所属チームを取得
+const playersWithTeam = players.map((player) => {
+  let currentTeam: string | undefined;
+  let currentTeamName: string | undefined;
+  let lastTeam: string | undefined;
+  let lastTeamName: string | undefined;
+  let lastDate: string | undefined;
+
+  // 全チームのロスターをチェック
+  for (const [teamSlug, changes] of rosterMap.entries()) {
+    const current = new Set<string>();
+    let playerLastIn: string | undefined;
+
+    for (const entry of changes) {
+      if (entry.member?.in?.includes(player.slug)) {
+        playerLastIn = entry.date;
+      }
+      if (entry.member?.in) {
+        for (const p of entry.member.in) current.add(p);
+      }
+      if (entry.member?.out) {
+        for (const p of entry.member.out) current.delete(p);
+      }
+    }
+
+    // 現在所属しているチーム
+    if (current.has(player.slug)) {
+      currentTeam = teamSlug;
+      currentTeamName = teamsBySlug[teamSlug]?.name ?? teamSlug;
+      break;
+    }
+
+    // 最後に所属していたチームを記録
+    if (playerLastIn && (!lastDate || playerLastIn > lastDate)) {
+      lastDate = playerLastIn;
+      lastTeam = teamSlug;
+      lastTeamName = teamsBySlug[teamSlug]?.name ?? teamSlug;
+    }
+  }
+
+  return {
+    ...player,
+    currentTeam,
+    currentTeamName,
+    lastTeam: currentTeam ? undefined : lastTeam,
+    lastTeamName: currentTeam ? undefined : lastTeamName,
+  };
+});
+
+// 名前でソート（デフォルト表示）
+playersWithTeam.sort((a, b) => a.name.localeCompare(b.name, 'ja'));
+---
+
+<Layout>
+  <Fragment slot="head">
+    <Meta
+      title="プレイヤー一覧"
+      description="ポケモンユナイトのプロプレイヤー一覧"
+    />
+  </Fragment>
+  <PlayerList client:visible players={playersWithTeam} />
+</Layout>

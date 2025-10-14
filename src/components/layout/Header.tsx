@@ -29,6 +29,9 @@ export default function Header() {
             <Link href={href('')} color="inherit" underline="hover">
               チーム一覧
             </Link>
+            <Link href={href('players')} color="inherit" underline="hover">
+              プレイヤー一覧
+            </Link>
           </Box>
         </Toolbar>
       </AppBar>

@@ -59,7 +59,7 @@ export default function PlayerList({ players }: { players: Player[] }) {
           variant="outlined"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="名前、別名、所属チームで検索..."
+          placeholder="プレイヤー名で検索..."
           // sx={{ maxWidth: 600 }}
         />
         <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>

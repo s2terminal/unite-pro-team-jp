@@ -1,7 +1,10 @@
 ---
 import href from '../lib/url';
 import SiteHeader from '../components/layout/Header';
+import NavigationTabs from '../components/layout/NavigationTabs';
 import SiteFooter from '../components/layout/Footer';
+
+const currentPath = Astro.url.pathname;
 ---
 
 <style>
@@ -62,6 +65,7 @@ import SiteFooter from '../components/layout/Footer';
     <header>
       <SiteHeader client:load />
     </header>
+    <NavigationTabs currentPath={currentPath} client:load />
     <main>
       <slot />
     </main>

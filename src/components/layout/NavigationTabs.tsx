@@ -33,8 +33,8 @@ export default function NavigationTabs({ currentPath = '/' }: NavigationTabsProp
             },
           }}
         >
-          <Tab label="🏆 チーム" href={href('')} />
-          <Tab label="👤 プレイヤー" href={href('players')} />
+          <Tab label="🏆 チーム" aria-label="チーム" href={href('')} />
+          <Tab label="👤 プレイヤー" aria-label="プレイヤー" href={href('players')} />
         </Tabs>
       </Box>
     </AppThemeProvider>

@@ -308,6 +308,16 @@ zeta-division:
     reference:
       - https://zetadivision.com/news/2025/05/21/34042
     date: 2025-05-21
+  - member:
+      out:
+        - 1levup
+      in:
+        - holly
+    reference:
+      - https://x.com/zetadivision/status/1983851403543245277
+      - https://zetadivision.com/news/2025/10/30/38991
+    date: 2025-10-30
+    memo: Hollyが期限付きで加入。Wajiroがリザーブ、1LevUPがアシスタントコーチへ転向。
 fennel:
   - member:
       in:
@@ -368,6 +378,14 @@ nagoya-oja:
     reference:
       - https://prtimes.jp/main/html/rd/p/000000054.000060029.html
     date: 2024-11-09
+  - member:
+      out:
+        - holly
+    reference:
+      - https://x.com/zetadivision/status/1983851403543245277
+      - https://zetadivision.com/news/2025/10/30/38991
+    date: 2025-10-30
+    memo: HollyがZETA DIVISIONへ期限付き移籍。
 reignite:
   - member:
       in:

@@ -201,6 +201,17 @@ reject:
       - https://x.com/RC_REJECT/status/1906632576460321128
     date: 2025-03-31
     memo: O2はREJECTのboard memberとして活動を継続
+  - member:
+      out:
+        - haruta
+      in:
+        - overlord
+        - yumenyan
+    reference:
+      - https://prtimes.jp/main/html/rd/p/000000401.000050979.html
+      - https://x.com/RC_REJECT/status/1983836373162573896
+    date: 2025-10-30
+    memo: Harutaはコーチに就任
 scarz:
   - member:
       in:

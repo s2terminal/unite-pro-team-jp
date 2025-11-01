@@ -183,6 +183,11 @@ qtdig:
         - teacher
     reference: [https://x.com/QT_DIG/status/1976935810680443281]
     date: 2025-10-11
+  - member:
+      in:
+        - nogasazu
+    reference: [https://x.com/QT_DIG/status/1984530858028777862]
+    date: 2025-11-01
 reject:
   - member:
       in:

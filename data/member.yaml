@@ -113,6 +113,7 @@ player:
   haruta:
     name: Haruta
     reference: [https://x.com/Haruta_Unite]
+    memo: REJECT Pokémon UNITE部門コーチ
   tamerin:
     name: Tamerin
     alias: [ためりん]
@@ -124,6 +125,9 @@ player:
     name: O2
     reference: [https://x.com/O2_unite]
     memo: REJECTのboard memberとして活動を継続
+  overlord:
+    name: Overlord
+    reference: [https://x.com/Overlord98TV]
   haruto:
     name: Haruto
     alias: [すらまる, 最低学年²]

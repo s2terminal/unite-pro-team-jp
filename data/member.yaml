@@ -183,7 +183,8 @@ player:
     alias: [チャム]
     reference: [https://x.com/cham09126]
   harusame:
-    name: はるさめ
+    name: HarüsaMゑ
+    alias: [はるさめ]
     reference: [https://x.com/somarion787]
   euclid:
     name: ユークリッド
@@ -284,6 +285,7 @@ player:
   arumini:
     name: あるみに
     alias: [Arumini]
+    reference: [https://x.com/orszxl]
   gotty:
     name: ごってぃー
     reference: [https://x.com/S_Sangou]
@@ -293,6 +295,10 @@ player:
   matcharyokucha:
     name: 抹茶緑茶
     reference: [https://x.com/mutimoti0]
+  menmen:
+    name: めんめん
+    alias: [Menmen]
+    reference: [https://x.com/rawomenmen_10]
   nogasazu:
     name: 逃さずのか
     alias: [逃さずの石橋]
@@ -304,6 +310,10 @@ player:
   rururu:
     name: ルるる
     reference: [https://x.com/Rururu_wakame]
+  rupan:
+    name: るぱん
+    alias: [Rupan]
+    reference: [https://x.com/qop_0401]
   pixel:
     name: Pixel
     alias: [ピクセル]
@@ -331,7 +341,8 @@ player:
     alias: [わふ]
     reference: [https://x.com/wafuchan_n]
   notgglemon:
-    name: NotGGLemon
+    name: GGLemon
+    alias: [NotGGLemon]
     reference: [https://x.com/NotGGLemon]
   ajitama:
     name: あじたま

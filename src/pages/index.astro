@@ -50,6 +50,7 @@ const recentChanges = flattened.slice(0, 20);
   <Fragment slot="head">
     <Meta />
   </Fragment>
+  <p>日本のポケモンユナイトプロチームの情報をまとめています。</p>
   <TeamList client:visible teams={displayTeams} rosters={rosters} playersBySlug={playersBySlug} />
   <p style="margin-top: 1.5rem; text-align: right;">
     <a href={href(['team'])} style="font-weight: 600; text-decoration: underline;">

@@ -9,6 +9,10 @@ data/
 ├── member.yaml # 選手のマスター情報
 ├── roster.yaml # チームに加入・脱退した選手の履歴情報
 └── team.yaml   # チームのマスター情報
+
+## GitHub Pages でのパス運用について
+
+GitHub Pages (Project Pages) を想定しています。内部リンクは `src/lib/url.ts` の `href` を使い、パス判定には同ファイルの `normalizePath` を使ってベースパス(`/owner/repo/`)を取り除いてください。
 ```
 
 ### データの追加手順

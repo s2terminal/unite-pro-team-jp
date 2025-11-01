@@ -1,7 +1,7 @@
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import href from '../../lib/url';
+import href, { normalizePath } from '../../lib/url';
 import { AppThemeProvider } from './AppTheme';
 
 interface NavigationTabsProps {
@@ -9,14 +9,17 @@ interface NavigationTabsProps {
 }
 
 export default function NavigationTabs({ currentPath = '/' }: NavigationTabsProps) {
+  const normalizedPath = normalizePath(currentPath);
+
   // 現在のパスに基づいてタブの値を決定
-  const getCurrentTab = () => {
-    if (currentPath === '/' || currentPath.startsWith('/team')) {
+  const getCurrentTab = (): 0 | 1 | false => {
+    if (normalizedPath.startsWith('/team')) {
       return 0;
-    } else if (currentPath.startsWith('/players') || currentPath.startsWith('/player')) {
+    }
+    if (normalizedPath.startsWith('/players') || normalizedPath.startsWith('/player')) {
       return 1;
     }
-    return 0;
+    return false;
   };
 
   return (

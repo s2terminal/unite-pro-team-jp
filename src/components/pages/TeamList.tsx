@@ -22,7 +22,6 @@ export default function TeamList({
 }) {
   return (
     <AppThemeProvider>
-      <p>日本のポケモンユナイトプロチームの情報をまとめています。</p>
       <h1>チーム一覧</h1>
       <Box
         sx={{

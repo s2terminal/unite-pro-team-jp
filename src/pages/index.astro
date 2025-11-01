@@ -2,34 +2,38 @@
 import Layout from '../layouts/Layout.astro';
 import Meta from '../layouts/Meta.astro';
 import { getTeams, getRosters, getPlayers } from '../lib/models';
+import href from '../lib/url';
 import TeamList from '../components/pages/TeamList';
 import RecentRosterCard from '../components/ui/RecentRosterCard';
 
-const teams = await getTeams();
+const allTeams = await getTeams();
 const [rosterMap, players] = await Promise.all([getRosters(), getPlayers()]);
+const currentRostersEntries = allTeams
+  .map((t) => [
+    t.slug,
+    rosterMap.get(t.slug)?.reduce((set, entry) => {
+      for (const p of entry.member?.in ?? []) set.add(p);
+      for (const p of entry.member?.out ?? []) set.delete(p);
+      return set;
+    }, new Set<string>()) ?? new Set<string>(),
+  ])
+  .map(([slug, set]) => [slug, [...set]] as const);
+const currentRosters = Object.fromEntries(currentRostersEntries);
+const displayTeams = allTeams.filter((t) => (currentRosters[t.slug]?.length ?? 0) >= 5);
 const rosters = Object.fromEntries(
-  teams
-    .map((t) => [
-      t.slug,
-      rosterMap.get(t.slug)?.reduce((set, entry) => {
-        for (const p of entry.member?.in ?? []) set.add(p);
-        for (const p of entry.member?.out ?? []) set.delete(p);
-        return set;
-      }, new Set<string>()) ?? new Set<string>(),
-    ])
-    .map(([slug, set]) => [slug, [...set]])
+  displayTeams.map((t) => [t.slug, currentRosters[t.slug] ?? []] as const)
 );
 const playersBySlug = Object.fromEntries(players.map((p) => [p.slug, p]));
 
 // 最近のロスター変更 (全チームから直近の日付順で最大20件程度)
 const flattened = [] as {
   date: string;
-  team: (typeof teams)[number];
+  team: (typeof allTeams)[number];
   ins: string[];
   outs: string[];
   references?: string[];
 }[];
-for (const team of teams) {
+for (const team of allTeams) {
   const history = rosterMap.get(team.slug) ?? [];
   for (const h of history) {
     const ins = h.member?.in ?? [];
@@ -46,7 +50,13 @@ const recentChanges = flattened.slice(0, 20);
   <Fragment slot="head">
     <Meta />
   </Fragment>
-  <TeamList client:visible teams={teams} rosters={rosters} playersBySlug={playersBySlug} />
+  <p>日本のポケモンユナイトプロチームの情報をまとめています。</p>
+  <TeamList client:visible teams={displayTeams} rosters={rosters} playersBySlug={playersBySlug} />
+  <p style="margin-top: 1.5rem; text-align: right;">
+    <a href={href(['team'])} style="font-weight: 600; text-decoration: underline;">
+      すべてのチームを見る →
+    </a>
+  </p>
   <div style="margin-top: 2.5rem;">
     <RecentRosterCard client:visible items={recentChanges} playersBySlug={playersBySlug} />
   </div>

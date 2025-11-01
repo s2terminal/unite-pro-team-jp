@@ -42,6 +42,28 @@ export type HrefOptions = {
   trailingSlash?: boolean;
 };
 
+export function normalizePath(
+  path: string,
+  baseURL = (import.meta.env.BASE_URL as string) ?? '/'
+): string {
+  const ensuredPath = path && path.length > 0 ? path : '/';
+  const pathWithSlash = ensuredPath.startsWith('/') ? ensuredPath : `/${ensuredPath}`;
+
+  if (baseURL && baseURL !== '/') {
+    const normalizedBase = baseURL.endsWith('/') ? baseURL : `${baseURL}/`;
+    if (pathWithSlash === normalizedBase.slice(0, -1)) {
+      return '/';
+    }
+    if (pathWithSlash.startsWith(normalizedBase)) {
+      const remainder = pathWithSlash.slice(normalizedBase.length);
+      const trimmed = remainder.replace(/^\/+/u, '');
+      return trimmed ? `/${trimmed}` : '/';
+    }
+  }
+
+  return pathWithSlash;
+}
+
 /**
  * BASE_URLを考慮して内部リンクhrefを生成する。
  * - pathには先頭スラッシュなし・ありのどちらでもOK

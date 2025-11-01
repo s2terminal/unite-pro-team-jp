@@ -1,0 +1,29 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Meta from '../../layouts/Meta.astro';
+import { getTeams, getRosters, getPlayers } from '../../lib/models';
+import TeamList from '../../components/pages/TeamList';
+
+const teams = await getTeams();
+const [rosterMap, players] = await Promise.all([getRosters(), getPlayers()]);
+const rosters = Object.fromEntries(
+  teams
+    .map((t) => [
+      t.slug,
+      rosterMap.get(t.slug)?.reduce((set, entry) => {
+        for (const p of entry.member?.in ?? []) set.add(p);
+        for (const p of entry.member?.out ?? []) set.delete(p);
+        return set;
+      }, new Set<string>()) ?? new Set<string>(),
+    ])
+    .map(([slug, set]) => [slug, [...set]])
+);
+const playersBySlug = Object.fromEntries(players.map((p) => [p.slug, p]));
+---
+
+<Layout>
+  <Fragment slot="head">
+    <Meta title="チーム一覧" description="ポケモンユナイトのプロチーム一覧" />
+  </Fragment>
+  <TeamList client:visible teams={teams} rosters={rosters} playersBySlug={playersBySlug} />
+</Layout>

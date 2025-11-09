@@ -5,6 +5,7 @@ enterforce36:
         - kota
         - nomu
         - iskw
+        - chokol
         - seno
         - cham
     reference:
@@ -16,6 +17,19 @@ enterforce36:
     reference:
       - https://x.com/ENTERFORCE_36/status/1965611248370024589
     date: 2025-09-10
+  - member:
+      out:
+        - cham
+    reference:
+      - https://x.com/ENTERFORCE_36/status/1981556264896479665
+    date: 2025-10-24
+  - member:
+      in:
+        - resta
+        - dorap1n
+    reference:
+      - https://x.com/ENTERFORCE_36/status/1986267306016784855
+    date: 2025-11-06
 burning-core-toyama:
   - member:
       in:
@@ -644,3 +658,39 @@ igzist:
     reference:
       - https://x.com/IGZIST_GG/status/1950874086961254780
     date: 2025-07-31
+  - member:
+      in:
+        - aporo
+        - zeras
+        - mizutama
+        - y1nyaois
+    reference:
+      - https://x.com/IGZIST_GG/status/1986388286345302369
+    date: 2025-11-06
+area310:
+  - member:
+      in:
+        - azyaru
+        - boss
+        - laby
+        - muu
+        - ruikey
+    reference:
+      - https://x.com/AREA310_GG/status/1984546525004120232
+    date: 2025-11-01
+    memo: ハグキ王がコーチとして加入。
+detonation-focusme:
+  - member:
+      in:
+        - yakou
+        - serata
+        - teacher
+        - orenonaha
+        - ryunun
+        - slickdosei
+        - kocoa
+    reference:
+      - https://x.com/team_detonation/status/1986343249884373166
+      - https://team-detonation.net/news/49637
+    date: 2025-11-06
+    memo: doseiはリザーバー兼アナリスト、kocoaはユース選手として加入

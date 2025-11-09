@@ -5,6 +5,7 @@ enterforce36:
         - kota
         - nomu
         - iskw
+        - chokol
         - seno
         - cham
     reference:
@@ -16,6 +17,19 @@ enterforce36:
     reference:
       - https://x.com/ENTERFORCE_36/status/1965611248370024589
     date: 2025-09-10
+  - member:
+      out:
+        - cham
+    reference:
+      - https://x.com/ENTERFORCE_36/status/1981556264896479665
+    date: 2025-10-24
+  - member:
+      in:
+        - resta
+        - dorap1n
+    reference:
+      - https://x.com/ENTERFORCE_36/status/1986267306016784855
+    date: 2025-11-06
 burning-core-toyama:
   - member:
       in:

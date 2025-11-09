@@ -386,6 +386,9 @@ player:
   kakigoya-jp:
     name: Kakigoya JP
     reference: [https://x.com/kakigoya_jp]
+  kocoa:
+    name: kocoa
+    reference: [https://x.com/yaLNLPoreVRf2ff]
   orenonaha:
     name: 俺の名はn
     alias: [orenonaha]

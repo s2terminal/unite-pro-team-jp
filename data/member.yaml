@@ -142,6 +142,9 @@ player:
   kamenero:
     name: Kamenero
     reference: [https://x.com/kamenero012]
+  kanpi:
+    name: Kanpi
+    reference: [https://x.com/kanpi_waaa]
   kusamusi:
     name: Kusamusi
     reference: [https://x.com/musityanndesu]
@@ -253,6 +256,9 @@ player:
   yumenyan:
     name: yumenyan
     reference: [https://x.com/yumenyan06]
+  ymd:
+    name: YMD
+    reference: [https://x.com/Gyaooyamada]
   serata:
     name: セラータ
     reference: [https://x.com/serata_0227]
@@ -281,6 +287,7 @@ player:
     reference: [https://x.com/NOJ_Yama]
   syu:
     name: syu
+    alias: [Misyu]
     reference: [https://x.com/NOJ_syu]
   iroas:
     name: Iroas

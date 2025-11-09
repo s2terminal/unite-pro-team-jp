@@ -23,6 +23,9 @@ player:
   mame:
     name: Mame
     reference: [https://x.com/mamewile22]
+  muu:
+    name: Muu
+    reference: [https://x.com/Nandemo_Naoshi3]
   chanme:
     name: chan_me
     reference: [https://x.com/_chanmaker]
@@ -41,6 +44,9 @@ player:
     name: あずべると
     alias: [Azubelto]
     reference: [https://x.com/_azu_desu_]
+  azyaru:
+    name: Azyaru
+    reference: [https://x.com/azaru__]
   lamiry:
     name: らみりー
     alias: [Lamiliy]
@@ -100,6 +106,9 @@ player:
     name: Cocoatta
     alias: [ここあった]
     reference: [https://x.com/cocoa_poke_]
+  y1nyaois:
+    name: y1nyaois
+    reference: [https://x.com/penmonogatari]
   yakou:
     name: Yakou
     reference: [https://x.com/yakoulamperouge]
@@ -194,6 +203,7 @@ player:
     reference: [https://x.com/0926mirror]
   zeras:
     name: ゼラス
+    alias: [Zerasu]
     reference: [https://x.com/zerasususu]
   kageatai:
     name: かげ値
@@ -221,6 +231,9 @@ player:
   bagel:
     name: bagel
     reference: [https://x.com/bagel_beguru]
+  boss:
+    name: Boss
+    reference: [https://x.com/Front_Brink64]
   laby:
     name: Laby
     reference: [https://x.com/xcicada3301x]
@@ -271,7 +284,7 @@ player:
   aporo:
     name: Aporo
     alias: [あぽろ]
-    reference: [https://x.com/NOJ_Aporo]
+    reference: [https://x.com/_apotya]
   holly:
     name: Holly
     reference: [https://x.com/NOJ_Holly]
@@ -296,6 +309,7 @@ player:
   haguking:
     name: ハグキ王
     reference: [https://x.com/hagukin_GG]
+    memo: AREA310のコーチ
   matcharyokucha:
     name: 抹茶緑茶
     reference: [https://x.com/mutimoti0]
@@ -303,6 +317,9 @@ player:
     name: めんめん
     alias: [Menmen]
     reference: [https://x.com/rawomenmen_10]
+  mizutama:
+    name: Mizutama
+    reference: [https://x.com/mizutama_poke]
   nogasazu:
     name: 逃さずのか
     alias: [逃さずの石橋, Aka]
@@ -318,6 +335,9 @@ player:
     name: るぱん
     alias: [Rupan]
     reference: [https://x.com/qop_0401]
+  ruikey:
+    name: Ruikey
+    reference: [https://x.com/yamaguwa3]
   pixel:
     name: Pixel
     alias: [ピクセル]

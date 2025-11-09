@@ -620,6 +620,27 @@ igzist:
     reference:
       - https://x.com/IGZIST_GG/status/1950874086961254780
     date: 2025-07-31
+  - member:
+      in:
+        - aporo
+        - zeras
+        - mizutama
+        - y1nyaois
+    reference:
+      - https://x.com/IGZIST_GG/status/1986388286345302369
+    date: 2025-11-06
+area310:
+  - member:
+      in:
+        - azyaru
+        - boss
+        - laby
+        - muu
+        - ruikey
+    reference:
+      - https://x.com/AREA310_GG/status/1984546525004120232
+    date: 2025-11-01
+    memo: ハグキ王がコーチとして加入。
 detonation-focusme:
   - member:
       in:
@@ -635,3 +656,4 @@ detonation-focusme:
       - https://team-detonation.net/news/49637
     date: 2025-11-06
     memo: doseiはリザーバー兼アナリスト、kocoaはユース選手として加入
+

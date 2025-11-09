@@ -23,6 +23,9 @@ player:
   mame:
     name: Mame
     reference: [https://x.com/mamewile22]
+  muu:
+    name: Muu
+    reference: [https://x.com/Nandemo_Naoshi3]
   chanme:
     name: chan_me
     reference: [https://x.com/_chanmaker]
@@ -41,6 +44,9 @@ player:
     name: あずべると
     alias: [Azubelto]
     reference: [https://x.com/_azu_desu_]
+  azyaru:
+    name: Azyaru
+    reference: [https://x.com/azaru__]
   lamiry:
     name: らみりー
     alias: [Lamiliy]
@@ -221,6 +227,9 @@ player:
   bagel:
     name: bagel
     reference: [https://x.com/bagel_beguru]
+  boss:
+    name: Boss
+    reference: [https://x.com/Front_Brink64]
   laby:
     name: Laby
     reference: [https://x.com/xcicada3301x]
@@ -296,6 +305,7 @@ player:
   haguking:
     name: ハグキ王
     reference: [https://x.com/hagukin_GG]
+    memo: AREA310のコーチ
   matcharyokucha:
     name: 抹茶緑茶
     reference: [https://x.com/mutimoti0]
@@ -318,6 +328,9 @@ player:
     name: るぱん
     alias: [Rupan]
     reference: [https://x.com/qop_0401]
+  ruikey:
+    name: Ruikey
+    reference: [https://x.com/yamaguwa3]
   pixel:
     name: Pixel
     alias: [ピクセル]

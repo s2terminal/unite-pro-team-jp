@@ -134,6 +134,18 @@ arneb:
     reference:
       - https://x.com/arneb_official/status/1972496553475506635
     date: 2025-09-29
+varrel:
+  - member:
+      in:
+        - tamerin
+        - kanpi
+        - syu
+        - ymd
+        - rururu
+    reference:
+      - https://x.com/_VARREL/status/1986373120819699885
+      - https://x.com/_VARREL/status/1986372994894332360
+    date: 2025-11-06
 insomnia:
   - member:
       in:
@@ -241,6 +253,12 @@ reject:
       - https://x.com/RC_REJECT/status/1983836373162573896
     date: 2025-10-30
     memo: Harutaはコーチに就任
+  - member:
+      out:
+        - tamerin
+    reference:
+      - https://x.com/_VARREL/status/1986373120819699885
+    date: 2025-11-06
 scarz:
   - member:
       in:
@@ -426,6 +444,12 @@ nagoya-oja:
       - https://zetadivision.com/news/2025/10/30/38991
     date: 2025-10-30
     memo: HollyがZETA DIVISIONへ期限付き移籍。
+  - member:
+      out:
+        - syu
+    reference:
+      - https://x.com/_VARREL/status/1986373120819699885
+    date: 2025-11-06
 reignite:
   - member:
       in:

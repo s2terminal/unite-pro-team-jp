@@ -107,6 +107,12 @@ arneb:
   name: Arneb
   reference:
     - https://legame-gaming.com/news/388/
+varrel:
+  name: VARREL
+  alias:
+    - ヴァレル
+  reference:
+    - https://varrel.jp/
 detonation-focusme:
   name: DetonatioN FocusMe
   alias:

@@ -170,6 +170,9 @@ player:
     name: Nomu
     alias: [ノム]
     reference: [https://x.com/_xial2_]
+  resta:
+    name: ResTA
+    reference: [https://x.com/_res_TA_]
   iskw:
     name: ISKW
     alias: [イシカワ]
@@ -182,6 +185,10 @@ player:
     name: cham
     alias: [チャム]
     reference: [https://x.com/cham09126]
+  chokol:
+    name: Chokol
+    alias: [ちょこる]
+    reference: [https://x.com/Aporochokol]
   harusame:
     name: HarüsaMゑ
     alias: [はるさめ]

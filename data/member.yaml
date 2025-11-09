@@ -100,6 +100,9 @@ player:
     name: Cocoatta
     alias: [ここあった]
     reference: [https://x.com/cocoa_poke_]
+  y1nyaois:
+    name: y1nyaois
+    reference: [https://x.com/penmonogatari]
   yakou:
     name: Yakou
     reference: [https://x.com/yakoulamperouge]
@@ -194,6 +197,7 @@ player:
     reference: [https://x.com/0926mirror]
   zeras:
     name: ゼラス
+    alias: [Zerasu]
     reference: [https://x.com/zerasususu]
   kageatai:
     name: かげ値
@@ -271,7 +275,7 @@ player:
   aporo:
     name: Aporo
     alias: [あぽろ]
-    reference: [https://x.com/NOJ_Aporo]
+    reference: [https://x.com/_apotya]
   holly:
     name: Holly
     reference: [https://x.com/NOJ_Holly]
@@ -303,6 +307,9 @@ player:
     name: めんめん
     alias: [Menmen]
     reference: [https://x.com/rawomenmen_10]
+  mizutama:
+    name: Mizutama
+    reference: [https://x.com/mizutama_poke]
   nogasazu:
     name: 逃さずのか
     alias: [逃さずの石橋, Aka]

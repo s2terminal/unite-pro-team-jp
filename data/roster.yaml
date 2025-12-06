@@ -146,6 +146,17 @@ varrel:
       - https://x.com/_VARREL/status/1986373120819699885
       - https://x.com/_VARREL/status/1986372994894332360
     date: 2025-11-06
+varrel-youth:
+  - member:
+      in:
+        - ccanomu
+        - 9chamas
+        - sunsunpapetto
+        - ozanyan
+        - hamutarosan
+    reference:
+      - https://x.com/_VARREL/status/1996444354383327410
+    date: 2025-12-04
 insomnia:
   - member:
       in:

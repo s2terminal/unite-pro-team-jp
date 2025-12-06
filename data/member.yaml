@@ -137,6 +137,10 @@ player:
   overlord:
     name: Overlord
     reference: [https://x.com/Overlord98TV]
+    memo: WCS2025までアメリカ代表として活躍。
+      WCS2022にBLVKHVNDとして世界1位。
+      WCS2023にLuminosity Gamingとして世界1位。
+      2025年に日本に移住。
   haruto:
     name: Haruto
     alias: [すらまる, 最低学年²]
@@ -468,6 +472,7 @@ player:
   lunder:
     name: Lunder
     reference: [https://x.com/zerounite0]
+    memo: WCS2025までEUで活躍。2025年より日本に移住。
   falinks_pyu:
     name: ぴゅ
     reference: [https://x.com/falinks_pyu]

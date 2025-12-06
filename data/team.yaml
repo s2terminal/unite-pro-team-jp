@@ -6,6 +6,7 @@ enterforce36:
     - E36
   reference:
     - https://enterforce-36.com/
+  memo: ENTER FORCE.36のポケモンユナイト部門は、究極融合（アルティメットフュージョン）というチームが前身として発足したプロチーム。
 burning-core-toyama:
   name: BURNING CORE TOYAMA
   alias:
@@ -57,12 +58,18 @@ zeta-division:
   name: ZETA DIVISION
   reference:
     - https://zetadivision.com/team/pokemon-unite
+  memo: ZETA DIVISIONのポケモンユナイト部門は、2024年6月に発足したプロチーム。
+    かびちゃんずというチームを前身としている。
+    ポケモンワールドチャンピオンシップス2025（WCS2025）にて世界2位を獲得した。
 fennel:
   name: FENNEL
   alias:
     - フェンネル
   reference:
     - https://fennel-esports.com/members/pokemon-unite/
+  memo: FENNNELのポケモンユナイト部門は、2024年から活動しているプロチーム。
+    チャンピオンロードというチームを前身としている。
+    ポケモンワールドチャンピオンシップス2024（WCS2024）にて世界1位を獲得した。
 nagoya-oja:
   name: NAGOYA OJA
   alias:
@@ -113,18 +120,17 @@ arneb:
     - https://legame-gaming.com/news/388/
 varrel:
   name: VARREL
-  alias:
-    - ヴァレル
   reference:
-    - https://varrel.jp/
+    - https://varrel.jp/team/Pokemon-UNITE
+    - https://varrel.jp/news/2025/11/06/3607
 varrel-youth:
   name: VARREL YOUTH
   reference:
+    - https://varrel.jp/team/vly-pokemonunite
     - https://x.com/_VARREL/status/1996444354383327410
 detonation-focusme:
   name: DetonatioN FocusMe
   alias:
     - DFM
-    - デトネーションフォーカスミー
   reference:
     - https://team-detonation.net/news/49637

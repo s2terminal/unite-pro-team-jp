@@ -30,14 +30,14 @@ export default function TeamDetail({
             <Typography variant="h4" gutterBottom>
               {team.name}
             </Typography>
-            {team.memo && (
-              <Typography variant="body1" sx={{ mb: 1 }}>
-                {team.memo}
-              </Typography>
-            )}
             {!!team.alias?.length && (
               <Typography variant="body2" color="text.secondary">
                 （{team.alias.join(', ')}）
+              </Typography>
+            )}
+            {team.memo && (
+              <Typography variant="body1" sx={{ mb: 1 }}>
+                {team.memo}
               </Typography>
             )}
             {!!team.reference?.length && (

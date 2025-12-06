@@ -36,6 +36,10 @@ qtdig:
     - https://qtdig.com/team/pokemon_unite/
   memo: QT DIG∞は、福岡・天神の「esports Challenger’s Park」を本拠地に活動するプロチーム。
     2025年4月に、Sengoku GamingからQT DIG∞にチーム名を変更。
+ibushigin:
+  name: IBUSHIGIN
+  reference:
+    - https://www.ibsg.jp/
 reject:
   name: REJECT
   alias:

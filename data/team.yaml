@@ -15,17 +15,17 @@ burning-core-toyama:
   reference:
     - https://burning-core.com/
 axiz:
-  name: AXIZ
+  name: AXIZ WAVE
   alias:
-    - アクシズ
-    - AXIZ WAVE
+    - AXIZ
   reference:
     - https://axiz.gg/team/Pok%C3%A9mon%20UNITE/
 insomnia:
   name: INSOMNIA
   reference:
     - https://insomnia.zone/
-  memo: INSOMNIAのポケモンユナイト部門は、LRAというチームが前身として発足したプロチーム。
+  memo:
+    INSOMNIAのポケモンユナイト部門は、LRAというチームが前身として発足したプロチーム。
     東京都墨田区を拠点としている。
     Pokémon UNITE Asia Champions League 2025 FINALS（PUACL 2025 FINALS）にてアジア1位を獲得した。
 qtdig:
@@ -35,7 +35,8 @@ qtdig:
     - キューティーディグ
   reference:
     - https://qtdig.com/team/pokemon_unite/
-  memo: QT DIG∞は、福岡・天神の「esports Challenger’s Park」を本拠地に活動するプロチーム。
+  memo:
+    QT DIG∞は、福岡・天神の「esports Challenger’s Park」を本拠地に活動するプロチーム。
     2025年4月に、Sengoku GamingからQT DIG∞にチーム名を変更。
 ibushigin:
   name: IBUSHIGIN
@@ -54,6 +55,8 @@ scarz:
   name: SCARZ
   reference:
     - https://www.scarz.net/team/pokemon-unite/
+  memo: SCARZのポケモンユナイト部門は、2025年6月に発足したプロチーム。
+    L.Lというチームを前身としている。
 zeta-division:
   name: ZETA DIVISION
   reference:
@@ -93,7 +96,8 @@ eldivegaming:
     - えるだいぶ
   reference:
     - https://eldivegaming.com/
-  memo: elDive Gamingのポケモンユナイト部門は、2023年から活動している古参のプロチーム。
+  memo:
+    elDive Gamingのポケモンユナイト部門は、2023年から活動している古参のプロチーム。
     北海道を拠点としている。
     ポケモンユナイトの大会への参戦のほか、全国のショッピングモールでのティーチングイベントなども積極的に行っている。
 realize:

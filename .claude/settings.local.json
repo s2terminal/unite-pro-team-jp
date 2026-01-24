@@ -1,9 +1,5 @@
 {
   "permissions": {
-    "allow": [
-      "WebFetch(domain:x.com)",
-      "WebSearch",
-      "Bash(npm run validate:*)"
-    ]
+    "allow": ["WebFetch(domain:x.com)", "WebSearch", "Bash(npm run validate:*)"]
   }
 }

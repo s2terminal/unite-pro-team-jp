@@ -52,3 +52,8 @@ data/
 - member: 選手のIDで、加入(in)または脱退(out)を示す
 - date: 日付
 - reference: 加入または脱退を最初に報じた公式発表
+
+## URLの内容がうまく取得できない場合
+
+URLの内容がうまく取得できない場合は https://r.jina.ai/ を利用することでMarkdownで取得できます。
+例: https://r.jina.ai/https://example.com/path/to/page

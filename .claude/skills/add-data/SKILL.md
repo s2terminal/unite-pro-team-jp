@@ -52,4 +52,3 @@ data/
 - member: 選手のIDで、加入(in)または脱退(out)を示す
 - date: 日付
 - reference: 加入または脱退を最初に報じた公式発表
-

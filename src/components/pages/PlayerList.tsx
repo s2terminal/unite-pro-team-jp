@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
@@ -9,38 +9,21 @@ import Fuse from 'fuse.js';
 import href from '../../lib/url';
 import { AppThemeProvider } from '../layout/AppTheme';
 
-type Player = {
-  slug: string;
-  name: string;
-  alias?: string[];
-  currentTeam?: string;
-  currentTeamName?: string;
-  lastTeam?: string;
-  lastTeamName?: string;
-};
+type Player = { slug: string; name: string; alias?: string[] };
 
 export default function PlayerList({ players }: { players: Player[] }) {
   const [searchQuery, setSearchQuery] = useState('');
 
   // Fuse.jsの設定
-  const fuse = useMemo(
-    () =>
-      new Fuse(players, {
-        keys: [
-          { name: 'name', weight: 2 },
-          { name: 'slug', weight: 1.5 },
-          { name: 'alias', weight: 1 },
-          // { name: 'currentTeamName', weight: 0.5 },
-          // { name: 'lastTeamName', weight: 0.5 },
-        ],
-        // 0.5で "oyabun" で "おぶやん" がマッチする
-        threshold: 0.5,
-        includeScore: true,
-      }),
-    [players]
-  );
+  const fuse = useMemo(() => {
+    return new Fuse(players, {
+      keys: ['name', 'alias', 'slug'],
+      threshold: 0.4, // ファジー度合い（0: 完全一致, 1: なんでもマッチ）
+      includeScore: true,
+    });
+  }, [players]);
 
-  // フィルタリングされたプレイヤーリスト
+  // 検索結果
   const filteredPlayers = useMemo(() => {
     if (!searchQuery.trim()) {
       return players;
@@ -52,6 +35,8 @@ export default function PlayerList({ players }: { players: Player[] }) {
   return (
     <AppThemeProvider>
       <h1>プレイヤー一覧</h1>
+
+      {/* 検索フォーム */}
       <Box sx={{ mb: 3 }}>
         <TextField
           fullWidth
@@ -59,15 +44,15 @@ export default function PlayerList({ players }: { players: Player[] }) {
           variant="outlined"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="プレイヤー名で検索..."
-          // sx={{ maxWidth: 600 }}
+          placeholder="名前、エイリアス、IDで検索..."
+          autoComplete="off"
         />
-        <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-          {filteredPlayers.length} 人のプレイヤー
-          {searchQuery && ` (全 ${players.length} 人中)`}
+        <Typography variant="caption" sx={{ mt: 1, display: 'block', color: 'text.secondary' }}>
+          {filteredPlayers.length} 人のプレイヤーが見つかりました
         </Typography>
       </Box>
 
+      {/* プレイヤーカードのグリッド */}
       <Box
         sx={{
           display: 'grid',
@@ -78,6 +63,7 @@ export default function PlayerList({ players }: { players: Player[] }) {
             lg: '1fr 1fr 1fr 1fr',
           },
           gap: 2,
+          mt: 1,
         }}
       >
         {filteredPlayers.map((player) => (
@@ -97,23 +83,26 @@ export default function PlayerList({ players }: { players: Player[] }) {
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'center',
-                minHeight: 96,
+                minHeight: 80,
                 '&:hover': {
                   backgroundColor: 'action.hover',
                 },
               }}
-              onClick={() => {
+              onClick={(e) => {
+                const target = e.target as HTMLElement;
+                if (target?.closest('a')) return;
                 window.location.href = href(['player', player.slug]);
               }}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
+                  const target = e.target as HTMLElement;
+                  if (target?.closest('a')) return;
                   e.preventDefault();
                   window.location.href = href(['player', player.slug]);
                 }
               }}
             >
-              <CardContent sx={{ textAlign: 'center', width: '100%' }}>
+              <CardContent>
                 <Typography variant="h6" component="div">
                   <Box
                     component="span"
@@ -135,29 +124,22 @@ export default function PlayerList({ players }: { players: Player[] }) {
                 </Typography>
                 {player.alias && player.alias.length > 0 && (
                   <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
-                    （{player.alias.join(', ')}）
+                    aka: {player.alias.join(', ')}
                   </Typography>
                 )}
-                {player.currentTeamName && (
-                  <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-                    所属: {player.currentTeamName}
-                  </Typography>
-                )}
-                {!player.currentTeamName && player.lastTeamName && (
-                  <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-                    前所属: {player.lastTeamName}
-                  </Typography>
-                )}
+                <Typography variant="caption" color="text.secondary" sx={{ mt: 0.5, display: 'block' }}>
+                  @{player.slug}
+                </Typography>
               </CardContent>
             </CardActionArea>
           </Card>
         ))}
       </Box>
 
-      {filteredPlayers.length === 0 && searchQuery && (
+      {filteredPlayers.length === 0 && (
         <Box sx={{ textAlign: 'center', py: 4 }}>
           <Typography variant="body1" color="text.secondary">
-            「{searchQuery}」に一致するプレイヤーが見つかりませんでした
+            該当するプレイヤーが見つかりませんでした
           </Typography>
         </Box>
       )}

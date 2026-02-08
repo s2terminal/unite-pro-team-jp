@@ -500,3 +500,21 @@ player:
   nattoburun:
     name: ナットブルン
     reference: [https://x.com/deathzark23]
+  hisame:
+    name: HisAmё
+    reference: [https://x.com/Re_sAme_]
+    memo: Nagoya OJAキャプテン
+  leo:
+    name: LǝO
+    reference: [https://x.com/leo_Integ]
+  arikun:
+    name: Arikun
+    reference: [https://x.com/anori31]
+  hao:
+    name: Hao
+    alias: [はお]
+    reference: [https://x.com/ni18o_]
+  ruzu:
+    name: ruzu
+    alias: [るず]
+    reference: [https://x.com/nattoyato]

@@ -420,6 +420,13 @@ zeta-division:
       - https://x.com/AIMWITHPRIDE/status/2018565256222761257
     date: 2026-02-03
     memo: iamTomatoは体調不良により離脱。1LevUPがPUACL2026 Day6より選手として復帰。
+  - member:
+      out:
+        - holly
+    reference:
+      - https://x.com/Nagoya_OJA/status/2017162391348466020
+    date: 2026-02-08
+    memo: HollyがNAGOYA OJAへ復帰。期限付き移籍期間終了。
 fennel:
   - member:
       in:
@@ -494,6 +501,13 @@ nagoya-oja:
     reference:
       - https://x.com/_VARREL/status/1986373120819699885
     date: 2025-11-06
+  - member:
+      in:
+        - holly
+    reference:
+      - https://x.com/Nagoya_OJA/status/2017162391348466020
+    date: 2026-02-08
+    memo: HollyがZETA DIVISIONからの期限付き移籍期間を終えて復帰。
 reignite:
   - member:
       in:

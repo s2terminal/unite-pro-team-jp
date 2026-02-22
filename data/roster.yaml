@@ -494,6 +494,23 @@ nagoya-oja:
     reference:
       - https://x.com/_VARREL/status/1986373120819699885
     date: 2025-11-06
+  - member:
+      out:
+        - hotarunoken
+        - aporo
+        - yama
+        - iroas
+      in:
+        - hisame
+        - leo
+        - arikun
+        - hao
+        - ruzu
+        - cinnamon
+    reference:
+      - https://x.com/Nagoya_OJA/status/2017162391348466020
+    date: 2026-02-08
+    memo: 大幅なロスター変更。PUACL2026 FINALSおよびKEIO CUP Winter Tournament 2026に向けて新体制を発表。
 reignite:
   - member:
       in:

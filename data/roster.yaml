@@ -272,6 +272,12 @@ qtdig:
         - nogasazu
     reference: [https://x.com/QT_DIG/status/1984530858028777862]
     date: 2025-11-01
+  - member:
+      out:
+        - hayatobi
+        - omutero
+    reference: [https://x.com/QT_DIG/status/2038904134406197690]
+    date: 2026-03-31
 reject:
   - member:
       in:

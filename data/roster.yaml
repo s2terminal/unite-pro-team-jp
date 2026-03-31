@@ -172,6 +172,16 @@ varrel:
       - https://x.com/_VARREL/status/1986373120819699885
       - https://x.com/_VARREL/status/1986372994894332360
     date: 2025-11-06
+  - member:
+      out:
+        - tamerin
+        - kanpi
+        - syu
+        - ymd
+        - rururu
+    reference:
+      - https://x.com/_VARREL/status/2038896580103930117
+    date: 2026-03-31
 varrel-youth:
   - member:
       in:

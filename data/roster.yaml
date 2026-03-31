@@ -112,11 +112,24 @@ axiz:
         - lucapo
         - takubin
         - warararick
+        - mourimotonarui
     reference:
       - https://axiz.gg/topics/public/2jex3pbl6y6yesms.html
       - https://x.com/AXIZ_gg/status/1984184931157786916
     date: 2025-10-31
-    memo: コーチとして毛利元就が就任
+    memo: mourimotonaruiはコーチとして就任
+  - member:
+      out:
+        - lucapo
+        - warararick
+        - takubin
+        - yupono
+        - kabikiller
+        - shiel
+        - mourimotonarui
+    reference:
+      - https://x.com/AXIZ_gg/status/2038889036656615434
+    date: 2026-03-31
 arneb:
   - member:
       in:

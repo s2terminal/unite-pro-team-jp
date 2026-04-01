@@ -278,6 +278,12 @@ qtdig:
         - omutero
     reference: [https://x.com/QT_DIG/status/2038904134406197690]
     date: 2026-03-31
+  - member:
+      in:
+        - mare
+        - zeras
+    reference: [https://x.com/QT_DIG/status/2039266519084081511]
+    date: 2026-04-01
 reject:
   - member:
       in:

@@ -249,9 +249,6 @@ insomnia:
       - https://x.com/insomnia_esp/status/1978030536451916233
     date: 2025-10-14
   - member:
-      out:
-        - tsuntsun
-        - katastol
       in:
         - teacher
     reference:

@@ -30,6 +30,12 @@ enterforce36:
     reference:
       - https://x.com/ENTERFORCE_36/status/1986267306016784855
     date: 2025-11-06
+  - member:
+      out:
+        - nomu
+    reference:
+      - https://enterforce-36.com/pokemon-unite_nomu_thankyou/
+    date: 2026-04-04
 burning-core-toyama:
   - member:
       in:
@@ -484,6 +490,12 @@ zeta-division:
       - https://zetadivision.com/news/2026/03/31/42095
     date: 2026-03-31
     memo: Wajiroは選手引退。iamTomato退団も同日の公式発表にて正式発表（2026-02-03の離脱に続く正式退団）。Hollyはレンタル移籍期間終了。
+  - member:
+      in:
+        - nomu
+    reference:
+      - https://enterforce-36.com/pokemon-unite_nomu_thankyou/
+    date: 2026-04-04
 fennel:
   - member:
       in:

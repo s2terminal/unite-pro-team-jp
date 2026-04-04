@@ -539,3 +539,6 @@ player:
     name: cinnamon
     alias: [シナモン]
     reference: [https://x.com/cinnamon_favor]
+  karlow:
+    name: Karlow
+    reference: [https://x.com/karlow_Unite]

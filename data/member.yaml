@@ -319,7 +319,7 @@ player:
   iroas:
     name: Iroas
     alias: [イロアス]
-    reference: [https://x.com/NOJ_Iroas]
+    reference: [https://x.com/iroasUnite]
   arumini:
     name: あるみに
     alias: [Arumini]
@@ -520,7 +520,6 @@ player:
   hisame:
     name: HisAmё
     reference: [https://x.com/Re_sAme_]
-    memo: Nagoya OJAキャプテン
   leo:
     name: LǝO
     reference: [https://x.com/leo_Integ]
@@ -545,3 +544,7 @@ player:
   gyugyutrain:
     name: GyuGyuTrain
     reference: [https://x.com/cowcowtrain]
+  magaren:
+    name: まがれん
+    alias: [magaren]
+    reference: [https://x.com/imkayobi]

@@ -596,6 +596,19 @@ nagoya-oja:
       - https://x.com/Nagoya_OJA/status/2017162391348466020
     date: 2026-02-08
     memo: 大幅なロスター変更。PUACL2026 FINALSおよびKEIO CUP Winter Tournament 2026に向けて新体制を発表。
+  - member:
+      out:
+        - hao
+        - ruzu
+        - cinnamon
+      in:
+        - iroas
+        - magaren
+    reference:
+      - https://x.com/Nagoya_OJA/status/2040610639887179856
+      - https://x.com/Nagoya_OJA/status/2040611845741195608
+    date: 2026-04-05
+    memo: 新生名古屋OJAとしてPokémon UNITE World Championship 2026 Japan Regional Qualifiersに参戦。IroasがキャプテンとしてNagoya OJAに復帰。
 reignite:
   - member:
       in:

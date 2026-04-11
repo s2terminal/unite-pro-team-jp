@@ -390,6 +390,13 @@ scarz:
       - https://www.scarz.net/news/26040401/
       - https://x.com/SCARZ5/status/2040391914172899733
     date: 2026-04-04
+  - member:
+      out:
+        - kapio
+    reference:
+      - https://www.scarz.net/news/26041004/
+      - https://x.com/SCARZ5/status/2042558210423558219
+    date: 2026-04-10
 yoshimoto-gaming:
   - member:
       in:
@@ -859,6 +866,16 @@ igzist:
     reference:
       - https://x.com/IGZIST_GG/status/2038919240691171724
     date: 2026-03-31
+  - member:
+      in:
+        - tomy
+        - kapio
+        - syu
+        - claris_hanemai
+    reference:
+      - https://x.com/IGZIST_GG/status/2042558211262201963
+    date: 2026-04-10
+    memo: 羽舞クラリスはManager/Analystとして加入。
 area310:
   - member:
       in:

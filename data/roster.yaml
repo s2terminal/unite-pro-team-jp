@@ -977,16 +977,3 @@ yotta:
       - https://x.com/Yottatm/status/2016806022527275291
     date: 2026-01-29
     memo: 契約内容および体制の不備により部門解散
-bc-swell:
-  - member:
-      in:
-        - ajun
-    reference:
-      - https://swellinc.co.jp/%e3%80%90-streamer%e9%83%a8%e9%96%80-%e3%80%91%e3%80%8cajun%e3%80%8d%e5%8a%a0%e5%85%a5%e3%81%ae%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b/
-    date: 2022-02-14
-  - member:
-      out:
-        - ajun
-    reference:
-      - https://swellinc.co.jp/info-2026-04-24/
-    date: 2026-04-24

@@ -188,9 +188,11 @@ varrel:
         - syu
         - ymd
         - rururu
+        - mai
     reference:
       - https://x.com/_VARREL/status/1986373120819699885
       - https://x.com/_VARREL/status/1986372994894332360
+      - https://varrel.jp/news/2025/11/06/3607
     date: 2025-11-06
   - member:
       out:
@@ -202,6 +204,15 @@ varrel:
     reference:
       - https://x.com/_VARREL/status/2038896580103930117
     date: 2026-03-31
+  - member:
+      in:
+        - ajun
+        - khaz
+        - tatuki217
+        - sora
+    reference:
+      - https://x.com/_VARREL/status/2047586342826057739
+    date: 2026-04-24
 varrel-youth:
   - member:
       in:

@@ -37,6 +37,35 @@ enterforce36:
       - https://x.com/ENTERFORCE_36/status/2040619432540606882
       - https://enterforce-36.com/pokemon-unite_nomu_thankyou/
     date: 2026-04-04
+  - member:
+      in:
+        - kiryu
+        - rama
+        - felmin
+        - nshiro
+    reference:
+      - https://enterforce-36.com/pokemon-unite_wcs2026-roster/
+    date: 2026-04-05
+  - member:
+      out:
+        - chokol
+        - resta
+        - dorap1n
+    reference:
+      - https://enterforce-36.com/pokemon-unite_chokol-resta-dorap1n_thankyou/
+    date: 2026-04-30
+  - member:
+      out:
+        - kota
+        - iskw
+        - kiryu
+        - rama
+        - felmin
+        - nshiro
+    reference:
+      - https://x.com/ENTERFORCE_36/status/2075136876684443666
+      - https://enterforce-36.com/pokemon-unite_thankyou_2607/
+    date: 2026-07-09
 burning-core-toyama:
   - member:
       in:

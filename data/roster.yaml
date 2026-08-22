@@ -955,6 +955,17 @@ detonation-focusme:
       - https://x.com/team_detonation/status/2040270774091780096
       - https://team-detonation.net/news/50959
     date: 2026-04-04
+  - member:
+      out:
+        - serata
+        - orenonaha
+        - ryunun
+        - kocoa
+        - karlow
+    reference:
+      - https://x.com/team_detonation/status/2089955686994075890
+    date: 2026-08-19
+    memo: ポケモンユナイト部門の競技活動終了に伴い脱退
 dopeness:
   - member:
       in:

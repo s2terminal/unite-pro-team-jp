@@ -662,7 +662,6 @@ reignite:
       in:
         - rururu
         - pnt
-        - bagel
     reference:
       - https://prtimes.jp/main/html/rd/p/000000111.000077629.html
     date: 2025-04-14
@@ -720,7 +719,6 @@ reignite:
   - member:
       out:
         - notgglemon
-        - bagel
     reference:
       - https://reignite.jp/7929/
       - https://x.com/ReigniteJP/status/2094259680088674360

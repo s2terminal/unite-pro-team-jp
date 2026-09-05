@@ -335,6 +335,17 @@ qtdig:
         - zeras
     reference: [https://x.com/QT_DIG/status/2039266519084081511]
     date: 2026-04-01
+  - member:
+      out:
+        - suix
+        - bacon
+        - hachi
+        - zeras
+        - mare
+        - nogasazu
+    reference: [https://qtdig.com/news/2385/]
+    date: 2026-09-03
+    memo: 競技活動の一時休止に伴い、6名が契約満了で退団
 reject:
   - member:
       in:

@@ -662,8 +662,9 @@ reignite:
       in:
         - rururu
         - pnt
+        - bagel
     reference:
-      - https://reignite.jp/5660/
+      - https://prtimes.jp/main/html/rd/p/000000111.000077629.html
     date: 2025-04-14
   - member:
       out:
@@ -716,6 +717,15 @@ reignite:
     reference:
       - https://x.com/ReigniteJP/status/2060195760629862575
     date: 2026-05-29
+  - member:
+      out:
+        - notgglemon
+        - bagel
+    reference:
+      - https://reignite.jp/7929/
+      - https://x.com/ReigniteJP/status/2094259680088674360
+    date: 2026-08-31
+    memo: Pokémon UNITE部門解散
 eldivegaming:
   - member:
       in:

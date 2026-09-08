@@ -286,6 +286,13 @@ insomnia:
     reference:
       - https://x.com/insomnia_esp/status/2094711873727795444
     date: 2026-09-01
+  - member:
+      out:
+        - shaker
+        - arcana
+    reference:
+      - https://x.com/insomnia_esp/status/2097248585993924831
+    date: 2026-09-08
 qtdig:
   - member:
       in:
